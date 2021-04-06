@@ -1,12 +1,5 @@
 #include "skor.h"
 
-struct Global {
-  int score;
-  int life;
-  int gameover;
-  int dou;
-} global;
-
 void drawInfo(int score, int up)
 {
    setcolor(EGA_BLACK);
