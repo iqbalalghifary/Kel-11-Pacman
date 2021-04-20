@@ -423,7 +423,7 @@ void menu_utama(){
 					goto menu;
 				}
 			}
-		}else if((x>505 && x<505+280)&&(y>430 && y<490)){
+		}else if((x>40 && x<40+80)&&(y>600 && y<680)){
 			while(1){
 				how();
 				getmouseclick(WM_LBUTTONDOWN, x, y);
