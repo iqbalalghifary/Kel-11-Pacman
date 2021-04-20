@@ -1,0 +1,92 @@
+# depslib dependency file v1.0
+1618624061 source:d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\171511013.cpp
+	"header/header.h"
+
+1618713370 d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\header\header.h
+	<stdio.h>
+	<graphics.h>
+	<windows.h>
+	<process.h>
+	<stdbool.h>
+	<time.h>
+	"control.h"
+	"game_over.h"
+	"main_menu.h"
+	"maps.h"
+	"score.h"
+	"sound_track.h"
+
+1556723596 d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\header\181511008.h
+
+1556724274 d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\header\181511020.h
+
+1556728372 d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\header\181511023.h
+
+1554340878 d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\header\181511031.h
+
+1556688878 d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\header\181511040.h
+
+1554294456 d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\header\171511013.h
+
+1618625604 source:d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\181511008.cpp
+	"header/header.h"
+
+1562230154 source:d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\181511020.cpp
+	"header/header.h"
+
+1618628721 source:d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\181511023.cpp
+	"header/header.h"
+
+1561137864 source:d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\181511031.cpp
+	"header/header.h"
+
+1618625354 source:d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\181511040.cpp
+	"header/header.h"
+
+1618713557 source:d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\main.cpp
+	"header/pacman.h"
+
+1618733385 source:d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\main_menu.cpp
+	"header/pacman.h"
+
+1618730736 source:d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\control.cpp
+	"header/pacman.h"
+
+1618714593 source:d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\game_over.cpp
+	"header/pacman.h"
+
+1618734419 source:d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\maps.cpp
+	"header/pacman.h"
+
+1618714518 source:d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\score.cpp
+	"header/pacman.h"
+
+1618713620 source:d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\sound_track.cpp
+	"header/pacman.h"
+
+1618723068 d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\header\control.h
+
+1618713485 d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\header\game_over.h
+
+1618713495 d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\header\main_menu.h
+
+1618729362 d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\header\maps.h
+
+1618713515 d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\header\score.h
+
+1618713524 d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\header\sound_track.h
+
+1618719116 d:\semester 2\proyek perangkat lunak 2\projek uts\projek pacman\header\pacman.h
+	<stdio.h>
+	<graphics.h>
+	<stdbool.h>
+	<time.h>
+	<windows.h>
+	<process.h>
+	"control.h"
+	"game_over.h"
+	"main_menu.h"
+	"maps.h"
+	"score.h"
+	"sound_track.h"
+
