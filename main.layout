@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="default" />
+	<File name="sound_track.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="control.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10523" topLine="400" />
+		</Cursor>
+	</File>
+	<File name="main_menu.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="395" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="score.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="maps.cpp" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5727" topLine="38" />
+		</Cursor>
+	</File>
+	<File name="game_over.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>
+[Editors]
+Order=6,1,7,8,9,10,11,12,13
+Focused=8
+[Editor_1]
+CursorCol=1
+CursorRow=1
+TopLine=422
+LeftChar=1
+[Editor_6]
+CursorCol=1
+CursorRow=1
+TopLine=1
+LeftChar=1
+[Editor_7]
+CursorCol=1
+CursorRow=1
+TopLine=1
+LeftChar=1
+[Editor_8]
+CursorCol=1
+CursorRow=1
+TopLine=1
+LeftChar=1
+[Editor_9]
+CursorCol=1
+CursorRow=1
+TopLine=1
+LeftChar=1
+[Editor_10]
+CursorCol=1
+CursorRow=1
+TopLine=1
+LeftChar=1
+[Editor_11]
+CursorCol=1
+CursorRow=1
+TopLine=1
+LeftChar=1
+[Editor_12]
+CursorCol=1
+CursorRow=1
+TopLine=1
+LeftChar=1
+[Editor_13]
+CursorCol=1
+CursorRow=1
+TopLine=1
+LeftChar=1
