@@ -42,7 +42,7 @@ void finish(int p, int l){
 void view_level(int l){
 	char msg[128];
 	settextstyle(1, 0, 1);
-	sprintf(msg, "level: %d", l);
+	sprintf(msg, "level Anda : %d", l);
 	outtextxy(0,0,msg);
 }
 
