@@ -90,7 +90,7 @@ void splashscreen(){
 		delay(250);
 		readimagefile("assets//img//loading//load8.jpg", k, l+100, k+i, l+j+100);
 		delay(250);
-		readimagefile("assets//img//loading//load9.jpg", k, l+100, k+i, l+j+100);
+		readimagefile(k, l+100, k+i, l+j+100);
 		delay(300);
 
 
