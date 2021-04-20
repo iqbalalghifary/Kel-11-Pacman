@@ -48,7 +48,7 @@ void view_level(int l){
 
 void winner_view(int l){
 	cleardevice();
-	readimagefile("assets//img//game//youwin.jpg", fullscreen);
+	readimagefile("", fullscreen);
 	delay(2000);
 }
 
@@ -56,18 +56,18 @@ void view_leaderboard()
 {
 	int x,y;
 
-	readimagefile("assets//img//game//egyp.jpg",fullscreen);
+	readimagefile("",fullscreen);
 
 	x=300;
 	y=180;
-	readimagefile("assets//img//game//nama.jpg",x,y,400+x,300+y);
+	readimagefile("",x,y,400+x,300+y);
 
 	x=700;
 	y=180;
-	readimagefile("assets//img//game//score.jpg",x,y,400+x,300+y);
+	readimagefile("",x,y,400+x,300+y);
 
 	x=600;
 	y=550;
-	readimagefile("assets//img//game//back.jpg",x,y,150+x,50+y);
+	readimagefile("",x,y,150+x,50+y);
 
 }
