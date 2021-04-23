@@ -35,7 +35,7 @@ void splashscreen(){
 	l=((getmaxy()/2)-(j/2));
 
 		readimagefile("assets//img//opening//background1.jpeg",fullscreen);
-		delay(1000);
+		delay(999);
 	    readimagefile("assets//img//opening//1.jpg",fullscreen);
 		readimagefile("assets//img//opening//2.jpg",fullscreen);
 		readimagefile("assets//img//opening//3.jpg",fullscreen);
