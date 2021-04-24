@@ -4,7 +4,7 @@ void menu_awal(){
    	readimagefile("assets//img//opening//background.jpeg",fullscreen);
    	x= 470;
    	y= 100;
-   	readimagefile("assets//img//opening//logo.jpg", x,y,350+x,150+y);
+   	readimagefile("assets//img//inGame//layer 1.jpg", x,y,350+x,150+y);
 	x= 580;
    	y= 300;
 	readimagefile("assets//img//inGame//play.jpg",x,y,125+x,60+y);
@@ -90,8 +90,8 @@ void about(){
 
 void keluar(){
 	readimagefile("assets//img//opening//yakin.gif",420,240,420+420,240+240);
-	readimagefile("assets//img//opening//tidak.gif",470,390,520,440);
-	readimagefile("assets//img//opening//ya.gif",740,390,790,440);
+	readimagefile("assets//img//opening//tidak.jpg",470,390,520,440);
+	readimagefile("assets//img//opening//ya.jpg",740,390,790,440);
 }
 
 void how(){
