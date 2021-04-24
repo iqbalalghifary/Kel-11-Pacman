@@ -3,15 +3,15 @@
 clock_t ts, te, dur_s,dur_m,dur_h;
 
 void soundloading(){
-	PlaySound("assets//Sounds//loading1.wav",NULL, SND_FILENAME|SND_ASYNC|SND_LOOP);
+	PlaySound("assets//Sounds//1.wav",NULL, SND_FILENAME|SND_ASYNC|SND_LOOP);
 }
 
 void soundgame(){
-	PlaySound("assets//Sounds//ingame.wav",NULL, SND_FILENAME|SND_ASYNC|SND_LOOP);
+	PlaySound("assets//Sounds//1.wav",NULL, SND_FILENAME|SND_ASYNC|SND_LOOP);
 }
 
 void soundmenu(){
-	PlaySound("assets//Sounds//opening.wav",NULL, SND_FILENAME|SND_ASYNC|SND_LOOP);
+	PlaySound("assets//Sounds//1.wav",NULL, SND_FILENAME|SND_ASYNC|SND_LOOP);
 }
 
 void score_sound(void *arg){
