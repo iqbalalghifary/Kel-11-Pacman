@@ -7,7 +7,7 @@ void menu_awal(){
    	readimagefile("assets//img//inGame//layer 1.jpg", x,y,350+x,150+y);
 	x= 580;
    	y= 300;
-	readimagefile("assets//img//inGame//play.jpg",x,y,125+x,60+y);
+	readimagefile("assets//img//inGame//Play.jpeg",x,y,125+x,60+y);
 	x=550;
 	y=400;
 	readimagefile("assets//img//inGame//score.jpg",x,y,185+x,60+y);
