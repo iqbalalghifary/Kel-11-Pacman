@@ -387,7 +387,7 @@ void menu_utama(){
 	menu_awal();
 	while(1){
 		getmouseclick(WM_LBUTTONDOWN, x, y);
-		if((x>580 && x<580+125)&&(y>300 && y<300+60)){
+		if((x>580 && x<580+151)&&(y>310 && y<310+70)){
 			while(lv<=2){
 				sc_lv(lv);
 				cleardevice();
@@ -414,12 +414,12 @@ void menu_utama(){
 				}
 			}
 			goto menu;
-		}else if((x>245 && x<245+250)&&(y>430 && y<490)){
+		}else if((x>557 && x<557+185)&&(y>400 && y<400+90)){
 			view_leaderboard();
 			leaderboard();
 			while(1){
 				getmouseclick(WM_LBUTTONDOWN, x, y);
-				if((x>600 && x<600+150)&&(y>550 && y<550+50)){
+					if((x>30 && x<30+150)&&(y>650 && y<700)){
 					goto menu;
 				}
 			}
@@ -431,7 +431,7 @@ void menu_utama(){
 					goto menu;
 				}
 			}
-		}else if((x>580 && x<580+125)&&(y>500 && y<500+60)){
+		}else if((x>560 && x<560+185)&&(y>500 && y<500+90)){
 			about();
 			while(1){
 				getmouseclick(WM_LBUTTONDOWN, x, y);
