@@ -39,12 +39,12 @@
 	</File>
 </CodeBlocks_layout_file>
 [Editors]
-Order=6,1,7,8,9,10,11,12,13
-Focused=8
+Order=6,1,7,8,9,10,11,12,13,0
+Focused=0
 [Editor_1]
 CursorCol=1
 CursorRow=1
-TopLine=422
+TopLine=415
 LeftChar=1
 [Editor_6]
 CursorCol=1
@@ -85,4 +85,9 @@ LeftChar=1
 CursorCol=1
 CursorRow=1
 TopLine=1
+LeftChar=1
+[Editor_0]
+CursorCol=1
+CursorRow=27
+TopLine=16
 LeftChar=1
