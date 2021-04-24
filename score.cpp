@@ -68,6 +68,6 @@ void view_leaderboard()
 
     x=35;
 	y=652;
-    readimagefile("assets//img//inGame//aboutUs//back.jpg",x,y,80+x,80+y);
+    readimagefile("assets//img//inGame//aboutUs//back.gif",x,y,80+x,80+y);
 
 }
