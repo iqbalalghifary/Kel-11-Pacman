@@ -85,7 +85,7 @@ void about(){
    	readimagefile("assets//img//inGame//aboutUs//aboutus.jpg",fullscreen);
 	x=35;
 	y=652;
-    readimagefile("assets//img//inGame//aboutUs//back.jpg",x,y,80+x,80+y);
+    readimagefile("assets//img//inGame//aboutUs//back.gif",x,y,80+x,80+y);
 }
 
 void keluar(){
@@ -99,7 +99,7 @@ void how(){
     x=35;
     y=652;
 		readimagefile("assets//img//inGame//cara main.jpg",fullscreen);
-        readimagefile("assets//img//inGame//aboutUs//back.jpg",x,y,80+x,80+y);
+        readimagefile("assets//img//inGame//aboutUs//back.gif",x,y,80+x,80+y);
 }
 
 
