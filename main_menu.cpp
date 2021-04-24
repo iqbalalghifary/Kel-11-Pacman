@@ -2,24 +2,24 @@
 void menu_awal(){
 	int x, y;
    	readimagefile("assets//img//opening//background.jpeg",fullscreen);
-   	x= 470;
-   	y= 100;
-   	readimagefile("assets//img//inGame//layer 1.jpg", x,y,350+x,150+y);
+   	x= 420;
+   	y= -20;
+   	readimagefile("assets//img//inGame//logo.gif", x,y,500+x,500+y);
 	x= 580;
-   	y= 300;
-	readimagefile("assets//img//inGame//a.gif",x,y,125+x,60+y);
-	x=550;
+   	y= 310;
+	readimagefile("assets//img//inGame//a.gif",x,y,151+x,70+y);
+	x=557;
 	y=400;
-	readimagefile("assets//img//inGame//score.jpg",x,y,185+x,60+y);
+	readimagefile("assets//img//inGame//highscore.gif",x,y,185+x,90+y);
 	x=40;
 	y=600;
 	readimagefile("assets//img//inGame//cara.jpg",x,y,80+x,80+y);
-	x=580;
+	x=560;
 	y=500;
-	readimagefile("assets//img//inGame//about us.gif",x,y,125+x,60+y);
+	readimagefile("assets//img//inGame//about us.gif",x,y,185+x,90+y);
 	x=580;
 	y=600;
-	readimagefile("assets//img//inGame//exit.jpg",x,y,125+x,60+y);
+	readimagefile("assets//img//inGame//exit.gif",x,y,151+x,70+y);
 }
 
 void splashscreen(){
