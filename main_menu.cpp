@@ -7,7 +7,7 @@ void menu_awal(){
    	readimagefile("assets//img//inGame//layer 1.jpg", x,y,350+x,150+y);
 	x= 580;
    	y= 300;
-	readimagefile("assets//img//inGame//Play.jpeg",x,y,125+x,60+y);
+	readimagefile("assets//img//inGame//a.gif",x,y,125+x,60+y);
 	x=550;
 	y=400;
 	readimagefile("assets//img//inGame//score.jpg",x,y,185+x,60+y);
@@ -16,7 +16,7 @@ void menu_awal(){
 	readimagefile("assets//img//inGame//cara.jpg",x,y,80+x,80+y);
 	x=580;
 	y=500;
-	readimagefile("assets//img//inGame//about us.jpg",x,y,125+x,60+y);
+	readimagefile("assets//img//inGame//about us.gif",x,y,125+x,60+y);
 	x=580;
 	y=600;
 	readimagefile("assets//img//inGame//exit.jpg",x,y,125+x,60+y);
