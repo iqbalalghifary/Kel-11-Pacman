@@ -2,9 +2,9 @@
 void menu_awal(){
 	int x, y;
    	readimagefile("assets//img//opening//background.jpeg",fullscreen);
-   	x= 420;
-   	y= -20;
-   	readimagefile("assets//img//inGame//logo.gif", x,y,500+x,500+y);
+   	x= 320;
+   	y= -190;
+   	readimagefile("assets//img//inGame//logo.gif", x,y,700+x,700+y);
 	x= 580;
    	y= 310;
 	readimagefile("assets//img//inGame//a.gif",x,y,151+x,70+y);
