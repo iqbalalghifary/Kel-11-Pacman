@@ -56,18 +56,18 @@ void view_leaderboard()
 {
 	int x,y;
 
-	readimagefile("",fullscreen);
+	readimagefile("assets//img//inGame//highscore//egyp.jpg",fullscreen);
 
 	x=300;
 	y=180;
-	readimagefile("",x,y,400+x,300+y);
+	readimagefile("assets//img//inGame//highscore//nama.jpg",x,y,400+x,300+y);
 
 	x=700;
 	y=180;
-	readimagefile("",x,y,400+x,300+y);
+	readimagefile("assets//img//inGame//highscore//score.jpg",x,y,400+x,300+y);
 
-	x=600;
-	y=550;
-	readimagefile("",x,y,150+x,50+y);
+    x=35;
+	y=652;
+    readimagefile("assets//img//inGame//aboutUs//back.jpg",x,y,80+x,80+y);
 
 }
