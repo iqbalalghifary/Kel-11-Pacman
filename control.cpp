@@ -301,7 +301,7 @@ void save(char* name, int l){
 	p.duration.hours = scoree.duration.hours;
 	p.duration.minute = scoree.duration.minute;
 	p.duration.second = scoree.duration.second;
-	if((fp=fopen("FILE_LodeRuner.dat", "ab+")) == NULL){
+	if((fp=fopen("File_highscore.dat", "ab+")) == NULL){
 		printf("File tidak dapat dibuka!\n");
 	}else{
 		fwrite(&p, sizeof(sc), 1, fp);
@@ -316,7 +316,7 @@ void leaderboard(){
 	int n=1;
 	int tinggi = 250;
 	Sort_file();
-	if((fp=fopen("FILE_LodeRuner.dat", "rb")) == NULL){
+	if((fp=fopen("File_highscore.dat", "rb")) == NULL){
 		printf("File tidak dapat dibuka!\n");
 	}else{
 		rewind(fp);
@@ -344,7 +344,7 @@ void Sort_file(){
 
 	FILE *fp;
 
-	if ((fp=fopen("FILE_LodeRuner.DAT", "rb+"))==NULL)
+	if ((fp=fopen("File_highscore.dat", "rb+"))==NULL)
       {
             printf ("File tidak dapat dibuka\n");
       }
@@ -397,6 +397,7 @@ void menu_utama(){
 				maping();
 				if(lv==1){
 					timer_start();
+				
 				}
 				while(lv==ltemp){
 					view_level(ltemp);
