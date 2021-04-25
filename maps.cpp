@@ -89,10 +89,10 @@ void diamond(int mat, int baris, int kolom){
 }
 
 void black(int i, int j){
-	readimagefile("", img_mtrx);
+	readimagefile("assets//img//inGame//maps//background.gif", img_mtrx);
 }
 void block(int i, int j){
-	readimagefile("", img_mtrx);
+	readimagefile("assets//img//inGame//maps//purple.jpg", img_mtrx);
 }
 void diamond(int i, int j){
 	readimagefile("assets//img//inGame//maps//karun.jpg", img_mtrx);
