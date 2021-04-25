@@ -153,7 +153,7 @@ void ceksprite(int sprite, int baris, int kolom){
 			if(temp2 == 0){
 				readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 				delay(150);
-				readimagefile("assets//img//inGame//maps//bata.jpg", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
+				readimagefile("assets//img//inGame//maps//purple.jpg", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
 			}else if(temp2 != 0){
 				readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 				delay(150);
@@ -166,7 +166,7 @@ void ceksprite(int sprite, int baris, int kolom){
 		if(temp == 0 && (temp2 ==0 || A[i+1][j]==0) && A[i+1][j]!=1){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", 40*j,(40*i)+20,40+40*j,(40+40*i)+20);
 			delay(150);
-			readimagefile("assets//img//inGame//maps//bata.jpg", 40*j,(40*i)+20,40+40*j,(40+40*i)+20);
+			readimagefile("assets//img//inGame//maps//purple.jpg", 40*j,(40*i)+20,40+40*j,(40+40*i)+20);
 		}else{
 			readimagefile("assets//img//inGame//player//char//karakter2.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 			delay(150);
