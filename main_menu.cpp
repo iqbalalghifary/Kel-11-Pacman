@@ -11,9 +11,9 @@ void menu_awal(){
 	x=557;
 	y=400;
 	readimagefile("assets//img//inGame//highscore.gif",x,y,185+x,90+y);
-	x=40;
+	x=30;
 	y=600;
-	readimagefile("assets//img//inGame//cara.jpg",x,y,80+x,80+y);
+	readimagefile("assets//img//inGame//cara.gif",x,y,110+x,90+y);
 	x=560;
 	y=500;
 	readimagefile("assets//img//inGame//about us.gif",x,y,185+x,90+y);
@@ -85,7 +85,7 @@ void about(){
    	readimagefile("assets//img//inGame//aboutUs//aboutus.jpg",fullscreen);
 	x=35;
 	y=652;
-    readimagefile("assets//img//inGame//aboutUs//back.gif",x,y,80+x,80+y);
+    readimagefile("assets//img//inGame//aboutUs//back.gif",x,y,90+x,90+y);
 }
 
 void keluar(){
@@ -98,8 +98,8 @@ void how(){
     int x,y;
     x=35;
     y=652;
-		readimagefile("assets//img//inGame//cara main.jpg",fullscreen);
-        readimagefile("assets//img//inGame//aboutUs//back.gif",x,y,80+x,80+y);
+		readimagefile("assets//img//inGame//tutor-game.jpg",fullscreen);
+        readimagefile("assets//img//inGame//aboutUs//back.gif",x,y,90+x,90+y);
 }
 
 
