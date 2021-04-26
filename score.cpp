@@ -58,13 +58,13 @@ void view_leaderboard()
 
 	readimagefile("assets//img//inGame//highscore//BCKGRND SCORE.gif",fullscreen);
 
-	x=300;
+	x=100;
 	y=180;
-	readimagefile("assets//img//inGame//highscore//nama_score.gif",x,y,400+x,300+y);
+	readimagefile("assets//img//inGame//highscore//nama_score.gif",x,y,800+x,400+y);
 
-	x=700;
+	x=410;
 	y=180;
-	readimagefile("assets//img//inGame//highscore//score.gif",x,y,400+x,300+y);
+	readimagefile("assets//img//inGame//highscore//score.gif",x,y,800+x,400+y);
 
     x=35;
 	y=652;
