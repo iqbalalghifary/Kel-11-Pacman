@@ -7,11 +7,11 @@ void soundloading(){
 }
 
 void soundgame(){
-	PlaySound("assets//Sounds//1.wav",NULL, SND_FILENAME|SND_ASYNC|SND_LOOP);
+	PlaySound("assets//Sounds//musik nu kedua.wav",NULL, SND_FILENAME|SND_ASYNC|SND_LOOP);
 }
 
 void soundmenu(){
-	PlaySound("assets//Sounds//1.wav",NULL, SND_FILENAME|SND_ASYNC|SND_LOOP);
+	PlaySound("assets//Sounds//musik nu pertama.wav",NULL, SND_FILENAME|SND_ASYNC|SND_LOOP);
 }
 
 void score_sound(void *arg){
