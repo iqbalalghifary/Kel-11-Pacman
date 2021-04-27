@@ -314,7 +314,7 @@ void leaderboard(){
 	FILE *fp;
 	char view[15];
 	int n=1;
-	int tinggi = 250;
+	int tinggi = 300;
 	Sort_file();
 	if((fp=fopen("File_highscore.dat", "rb")) == NULL){
 		printf("File tidak dapat dibuka!\n");
@@ -322,12 +322,14 @@ void leaderboard(){
 		rewind(fp);
 		while (fread(&p, sizeof(sc), 1, fp) == 1 && n <= 5){
 			settextstyle(2, 0, 8);
-			sprintf(view,"%i",n);
-			outtextxy(430, tinggi, view);
-			sprintf(view,"%s",p.name);
-			outtextxy(460, tinggi, view);
-			sprintf(view,"%d",p.point);
-			outtextxy(900, tinggi, view);
+//			sprintf(view,"%i",n);
+//			outtextxy(320, tinggi, view);
+		
+			sprintf(view,"%s", p.name);
+			outtextxy(450, tinggi, view);
+	
+			sprintf(view,"%d", 	p.point);
+			outtextxy(770, tinggi, view);
 			tinggi += 40;
 			n++;
 		}
