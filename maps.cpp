@@ -19,7 +19,7 @@ int maps_level(int l, int a, int b){
         {1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1},
 		{1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1},
 		{1, 0, 0, 0, 0, 5, 0, 0, 5, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+        {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
 		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 		};
 		return B[a][b];
@@ -89,13 +89,13 @@ void diamond(int mat, int baris, int kolom){
 }
 
 void black(int i, int j){
-	readimagefile("assets//img//inGame//maps//background.gif", img_mtrx);
+	readimagefile("assets//img//inGame//maps//Background.gif", img_mtrx);
 }
 void block(int i, int j){
 	readimagefile("assets//img//inGame//maps//purple.jpg", img_mtrx);
 }
 void diamond(int i, int j){
-	readimagefile("assets//img//inGame//maps//telor.gif", img_mtrx);
+	readimagefile("assets//img//inGame//maps//telor_maps.jpg", img_mtrx);
 }
 void run(int i, int j, int p){
 	if(p==1){
