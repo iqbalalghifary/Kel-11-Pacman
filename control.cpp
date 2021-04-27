@@ -28,9 +28,9 @@ void tempMaps(int temp, int baris, int kolom){
 	if(temp==0){
 		readimagefile("assets//img//inGame//maps//background.gif", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
 	}
-	if(temp==1){
-		readimagefile("assets//img//inGame//maps//bata.jpg", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
-	}
+//	if(temp==1){
+//		readimagefile("", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
+//	}
 }
 
 void limit(){
@@ -40,7 +40,7 @@ void limit(){
 		atas = true;
 		k=0;
 	}else if(A[i][j]==0 && (A[i][j+1]==1 || A[i][j-1]==1 || A[i][j+1]==1 || A[i][j-1]==1)){
-		atas = true;
+		atas = false;
 		k=0;
 	}else if((i<=0)||(A[i+1][j]==1)){
 		atas = false;
