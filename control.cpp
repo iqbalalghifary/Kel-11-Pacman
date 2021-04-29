@@ -39,13 +39,15 @@ void limit(){
 	if(A[i-1][j]==0){
 		atas = true;
 		k=0;
-	}else if(A[i][j]==0 && (A[i][j+1]==1 || A[i][j-1]==1 || A[i][j+1]==1 || A[i][j-1]==1)){
+	}else if(A[i][j]==0 && (A[i][j+1]==1)){
 		atas = false;
 		k=0;
 	}else if((i<=0)||(A[i+1][j]==1)){
 		atas = false;
-	}
-
+	}else if(A[i][j-1]==1 || A[i][j+1]==1 || A[i][j-1]==1){
+		atas = false;
+		k=0;
+    }
 	if(A[i+1][j]==0|| (A[i][j]==0 && A[i+1][j]==0)){
 		bawah = true;
 	}else if((i>=17)||(A[i+1][j]==6)){
@@ -104,21 +106,21 @@ void ceksprite(int sprite, int baris, int kolom){
 	if(sprite==0){
 		if(temp == 0 && temp2 !=1){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
-			delay(150);
+//			delay(150);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
 			run(baris,kolom,2);
 		}else if(temp == 0 && temp2 == 0 && A[i+1][j]!=0){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
-			delay(150);
+//			delay(150);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
 			run(baris,kolom,2);
 		}else if(temp == 0 && temp2 ==0){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
-			delay(150);
+//			delay(150);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
 		}else if(temp == 0 && temp2 == 0 && A[i+1][j]==0){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", 40*j,(40*i)+20,40+40*j,(40+40*i)+20);
-			delay(150);
+//			delay(150);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
 			run(baris,kolom,2);
 		}else if(temp == 0 && (A[i+1][j]==0 || A[i-1][j]==0)){
@@ -130,17 +132,17 @@ void ceksprite(int sprite, int baris, int kolom){
 	if(sprite==1){
 		if(temp == 0 && temp2 !=0){
 			readimagefile("assets//img//inGame//player//char//karakter2.jpg", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
-			delay(10);
+//			delay(10);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 			run(baris,kolom,4);
 		}else if(temp == 0 && temp2 == 0 && A[i+1][j]!=0){
 			readimagefile("assets//img//inGame//player//char//karakter2.jpg", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
-			delay(10);
+//			delay(10);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
 			run(baris,kolom,4);
 		}else if(temp == 0 && temp2 ==0){
 			readimagefile("assets//img//inGame//player//char//karakter2.jpg", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
-			delay(10);
+//			delay(10);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 		}else if(temp == 0 && (A[i+1][j]==0 || A[i-1][j]==0)){
 			naik(baris, kolom, 1);
@@ -152,11 +154,11 @@ void ceksprite(int sprite, int baris, int kolom){
 		if(temp == 0 && (temp2 ==0 || A[i+1][j]==0)){
 			if(temp2 == 0){
 				readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
-				delay(150);
+//				delay(150);
 				readimagefile("assets//img//inGame//maps//purple.jpg", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
 			}else if(temp2 != 0){
 				readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
-				delay(150);
+//				delay(150);
 				readimagefile("assets//img//inGame//maps//background.gif", 40*j,(40*i)-20,40+40*j,(40+40*i)-20);
 			}
 		}
@@ -165,11 +167,11 @@ void ceksprite(int sprite, int baris, int kolom){
 	if(sprite==3){
 		if(temp == 0 && (temp2 ==0 || A[i+1][j]==0) && A[i+1][j]!=1){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", 40*j,(40*i)+20,40+40*j,(40+40*i)+20);
-			delay(150);
+//			delay(150);
 			readimagefile("assets//img//inGame//maps//purple.jpg", 40*j,(40*i)+20,40+40*j,(40+40*i)+20);
 		}else{
 			readimagefile("assets//img//inGame//player//char//karakter2.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
-			delay(150);
+//			delay(150);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 		}
 		naik(baris, kolom, 1);
@@ -273,8 +275,8 @@ void next_level(){
 }
 
 void die(){
-	if(A[i+1][j]==9){
-		i= i + 1;
+	if(A[i][j]==9){
+		i++ ;
 		gameover(i,j);
 		gameover_screen(scoree.point, scoree.duration.hours, scoree.duration.minute, scoree.duration.second);
 	}
@@ -399,7 +401,6 @@ void menu_utama(){
 				maping();
 				if(lv==1){
 					timer_start();
-				
 				}
 				while(lv==ltemp){
 					view_level(ltemp);

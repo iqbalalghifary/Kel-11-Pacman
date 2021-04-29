@@ -18,7 +18,7 @@ int maps_level(int l, int a, int b){
         {1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1},
         {1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1},
 		{1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1},
-		{1, 0, 0, 0, 0, 5, 0, 0, 5, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+		{1, 0, 0, 0, 0, 5, 0, 0, 5, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
         {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
 		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 		};
@@ -79,7 +79,11 @@ void maps(int mat, int baris, int kolom){
 	}
 	if(mat==5){
 		diamond(baris, kolom);
+	}	
+	if(mat==9){
+		 door(baris, kolom);
 	}
+	
 }
 
 void diamond(int mat, int baris, int kolom){
@@ -87,7 +91,11 @@ void diamond(int mat, int baris, int kolom){
 		diamond(baris, kolom);
 	}
 }
-
+void door(int mat, int baris, int kolom){
+	if(mat==9){
+		 door(baris, kolom);
+	}
+}
 void black(int i, int j){
 	readimagefile("assets//img//inGame//maps//Background.gif", img_mtrx);
 }
@@ -96,6 +104,9 @@ void block(int i, int j){
 }
 void diamond(int i, int j){
 	readimagefile("assets//img//inGame//maps//telor_maps.jpg", img_mtrx);
+}
+void door(int i, int j){
+	readimagefile("assets//img//inGame//maps//setan-atas.jpg", img_mtrx);
 }
 void run(int i, int j, int p){
 	if(p==1){

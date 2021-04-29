@@ -1,3 +1,4 @@
+
 void level(int l);
 void tempMaps(int temp, int baris, int kolom);
 void move(bool atas, bool bawah, bool kiri, bool kanan);

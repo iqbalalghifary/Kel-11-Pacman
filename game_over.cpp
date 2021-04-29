@@ -23,7 +23,7 @@ void gameover(int i, int j){
 
 void gameover_screen(int p,clock_t dur_h, clock_t dur_m,clock_t dur_s){
 	readimagefile("assets//img//inGame//inGameoverr.jpg", 0,0,1280,720);
-	delay(2000);
+	delay(200);
 	savescore_screen(p,dur_h,dur_m,dur_s);
 }
 
@@ -37,25 +37,25 @@ void savescore_screen(int p,clock_t dur_h, clock_t dur_m,clock_t dur_s){
 		if(kbhit()){
 			ax = getch();
 			if(ax == 51){
-				readimagefile("assets//imag//inGame//maps//sore.jgp", 600, 300, 720, 600);
+				readimagefile("assets//img//inGame//maps//score.jgp", 600, 300, 720, 600);
 			}
-//			if(ax == 80){
-//				nama[z]--;
-//				if(nama[z] < 65){
-//					nama[z] = 90;
-//				}
-//				outtextxy(600, 150 ,nama);
-//			}else if(ax == 72){
-//				nama[z]++;
-//				if(nama[z] > 90){
-//					nama[z] = 65;
-//				}
-//				outtextxy(600, 150 ,nama);
-//			}else if(ax == 77){
-//				if(z < 3) z++;
-//			}else if(ax == 75){
-//				if(z > 0) z--;
-//			}
+			if(ax == 80){
+				nama[z]--;
+				if(nama[z] < 65){
+					nama[z] = 90;
+				}
+				outtextxy(600, 150 ,nama);
+			}else if(ax == 72){
+				nama[z]++;
+				if(nama[z] > 90){
+					nama[z] = 65;
+				}
+				outtextxy(600, 150 ,nama);
+			}else if(ax == 77){
+				if(z < 3) z++;
+			}else if(ax == 75){
+				if(z > 0) z--;
+			}
 		}
 		view2_score(p);
 		view2_time(dur_h,dur_m,dur_s);
