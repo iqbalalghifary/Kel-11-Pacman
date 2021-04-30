@@ -36,18 +36,18 @@ void tempMaps(int temp, int baris, int kolom){
 void limit(){
 	bool kiri, kanan, atas, bawah;
 
-	if(A[i-1][j]==0){
+	if(A[i-1][j]==0 || A[i][j+1]==1 ){
 		atas = true;
 		k=0;
-	}else if(A[i][j]==0 && (A[i][j+1]==1)){
+	}else if(A[i][j]==0 && ( A[i][j-1]==1 || A[i][j+1]==1 || A[i][j-1]==1)){
 		atas = false;
 		k=0;
 	}else if((i<=0)||(A[i+1][j]==1)){
 		atas = false;
-	}else if(A[i][j-1]==1 || A[i][j+1]==1 || A[i][j-1]==1){
-		atas = false;
-		k=0;
-    }
+	}else{
+		atas = true;
+	}
+
 	if(A[i+1][j]==0|| (A[i][j]==0 && A[i+1][j]==0)){
 		bawah = true;
 	}else if((i>=17)||(A[i+1][j]==6)){
@@ -106,23 +106,27 @@ void ceksprite(int sprite, int baris, int kolom){
 	if(sprite==0){
 		if(temp == 0 && temp2 !=1){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
-//			delay(150);
+			delay(150);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
 			run(baris,kolom,2);
 		}else if(temp == 0 && temp2 == 0 && A[i+1][j]!=0){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
-//			delay(150);
-			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
+			delay(150);
+			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)-20,40+40*i);
 			run(baris,kolom,2);
 		}else if(temp == 0 && temp2 ==0){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
-//			delay(150);
+			delay(150);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
-		}else if(temp == 0 && temp2 == 0 && A[i+1][j]==0){
+		}else if(temp == 0 && temp2 == 0 && A[i+1][j]!=1){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", 40*j,(40*i)+20,40+40*j,(40+40*i)+20);
-//			delay(150);
-			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
+			delay(150);
+			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)-20,40+40*i);
 			run(baris,kolom,2);
+		}else if(temp == 0 && temp2 == 0 &&  A[i-1][j]!=0){
+		 	readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)+20,40*i,(40+40*j)-20,40+40*i);
+			delay(150);
+			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);	
 		}else if(temp == 0 && (A[i+1][j]==0 || A[i-1][j]==0)){
 			naik(baris, kolom, 1);
 		}else{
@@ -132,17 +136,17 @@ void ceksprite(int sprite, int baris, int kolom){
 	if(sprite==1){
 		if(temp == 0 && temp2 !=0){
 			readimagefile("assets//img//inGame//player//char//karakter2.jpg", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
-//			delay(10);
+			delay(10);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 			run(baris,kolom,4);
 		}else if(temp == 0 && temp2 == 0 && A[i+1][j]!=0){
 			readimagefile("assets//img//inGame//player//char//karakter2.jpg", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
-//			delay(10);
-			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
+			delay(10);
+			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)-20,40+40*i);
 			run(baris,kolom,4);
 		}else if(temp == 0 && temp2 ==0){
 			readimagefile("assets//img//inGame//player//char//karakter2.jpg", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
-//			delay(10);
+			delay(10);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 		}else if(temp == 0 && (A[i+1][j]==0 || A[i-1][j]==0)){
 			naik(baris, kolom, 1);
@@ -154,12 +158,12 @@ void ceksprite(int sprite, int baris, int kolom){
 		if(temp == 0 && (temp2 ==0 || A[i+1][j]==0)){
 			if(temp2 == 0){
 				readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
-//				delay(150);
+				delay(150);
 				readimagefile("assets//img//inGame//maps//purple.jpg", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
 			}else if(temp2 != 0){
 				readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
-//				delay(150);
-				readimagefile("assets//img//inGame//maps//background.gif", 40*j,(40*i)-20,40+40*j,(40+40*i)-20);
+				delay(150);
+				readimagefile("assets//img//inGame//maps//background.gif", 40*j,(40*i)+20,40+40*j,(40+40*i)-20);
 			}
 		}
 		naik(baris,kolom,1);
@@ -167,11 +171,11 @@ void ceksprite(int sprite, int baris, int kolom){
 	if(sprite==3){
 		if(temp == 0 && (temp2 ==0 || A[i+1][j]==0) && A[i+1][j]!=1){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", 40*j,(40*i)+20,40+40*j,(40+40*i)+20);
-//			delay(150);
+			delay(150);
 			readimagefile("assets//img//inGame//maps//purple.jpg", 40*j,(40*i)+20,40+40*j,(40+40*i)+20);
 		}else{
 			readimagefile("assets//img//inGame//player//char//karakter2.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
-//			delay(150);
+			delay(150);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 		}
 		naik(baris, kolom, 1);
@@ -275,8 +279,8 @@ void next_level(){
 }
 
 void die(){
-	if(A[i][j]==9){
-		i++ ;
+	if(A[i+1][j]==9){
+		i= i + 1;
 		gameover(i,j);
 		gameover_screen(scoree.point, scoree.duration.hours, scoree.duration.minute, scoree.duration.second);
 	}
@@ -382,9 +386,30 @@ void timers(clock_t dur_h, clock_t dur_m,clock_t dur_s){
 	scoree.duration.minute=dur_m;
 	scoree.duration.second=dur_s;
 }
+
+void pilihan(){
+	int x, y;
+	readimagefile("assets//img//opening//background.jpeg",fullscreen);
+	x= 150;
+   	y= 50;
+	readimagefile("assets//img//inGame//level1.jpg",x,y,450+x,300+y);
+	x= 700;
+	y= 50;
+	readimagefile("assets//img//inGame//level1.jpg",x,y,450+x,300+y);
+	x= 150;
+	y= 380;
+	readimagefile("assets//img//inGame//level1.jpg",x,y,450+x,300+y);
+	x= 700;
+	y= 380;
+	readimagefile("assets//img//inGame//level1.jpg",x,y,450+x,300+y);
+	x=35;
+	y=652;
+    readimagefile("assets//img//inGame//aboutUs//back.gif",x,y,90+x,90+y);
+}
+
 void menu_utama(){
 	int x, y, ltemp;
-	int lv = 1;
+	
 	int p=1;
     soundmenu();
 	menu:
@@ -392,33 +417,110 @@ void menu_utama(){
 	while(1){
 		getmouseclick(WM_LBUTTONDOWN, x, y);
 		if((x>580 && x<580+151)&&(y>310 && y<310+70)){
-			while(lv<=2){
-				sc_lv(lv);
-				cleardevice();
-				soundgame();
-				level(lv);
-				ltemp = lv;
-				maping();
-				if(lv==1){
-					timer_start();
-				}
-				while(lv==ltemp){
-					view_level(ltemp);
-					pointt();
-					tempp();
-					movement(lv);
-                    if(e=='p' || e=='P'){
-						pause();
-					}else{
-						limit();
+			pilihan();
+			while(1){
+				getmouseclick(WM_LBUTTONDOWN, x, y);
+				if((x>150 && x<150+450)&&(y>50 && y<50+300)){
+				int lv = 1;
+				while(lv<=3){
+					sc_lv(lv);
+					cleardevice();
+					soundgame();
+					level(lv);
+					ltemp = lv;
+					maping();
+					if(lv==1){
+					timer_start();	
 					}
-					lv = num_level(lv);
-					die();
-					timer_end();
+					while(lv==ltemp){
+						view_level(ltemp);
+						pointt();
+						tempp();
+						movement(lv);
+						if(e=='P' || e=='p' ){
+							pause();
+						}else{
+							limit();
+						}
+						lv=num_level(lv);
+						die();
+						timer_end();
+					}
+				}
+			    }else if ((x>700 && x<700+450)&&(y>50 && y<50+300)){
+				while(1){
+				getmouseclick(WM_LBUTTONDOWN, x, y);
+				if((x>700 && x<700+450)&&(y>50 && y<50+300)){
+				int lv = 2;
+				while(lv<=3){
+					sc_lv(lv);
+					cleardevice();
+					soundgame();
+					level(lv);
+					ltemp = lv;
+					maping();
+					if(lv==2){
+					timer_start();	
+					}
+					while(lv==ltemp){
+						view_level(ltemp);
+						pointt();
+						tempp();
+						movement(lv);
+						if(e=='P' || e=='p' ){
+							pause();
+						}else{
+							limit();
+						}
+						lv=num_level(lv);
+						die();
+						timer_end();
+					}
+			}
+				}
+			}	goto menu;
+			}else if ((x>35 && x<35+90)&&(y>652 && y<652+90)){
+				while(1){
+				getmouseclick(WM_LBUTTONDOWN, x, y);
+				if((x>35 && x<35+90)&&(y>652 && y<652+90)){
+					goto menu;
 				}
 			}
-			goto menu;
-		}else if((x>557 && x<557+185)&&(y>400 && y<400+90)){
+	}  else if ((x>150 && x<150+450)&&(y>380 && y<380+300)){
+				while(1){
+				getmouseclick(WM_LBUTTONDOWN, x, y);
+				if((x>150 && x<150+450)&&(y>380 && y<380+300)){
+				int lv = 3;
+				while(lv<=3){
+					sc_lv(lv);
+					cleardevice();
+					soundgame();
+					level(lv);
+					ltemp = lv;
+					maping();
+					if(lv==2){
+					timer_start();	
+					}
+					while(lv==ltemp){
+						view_level(ltemp);
+						pointt();
+						tempp();
+						movement(lv);
+						if(e=='P' || e=='p' ){
+							pause();
+						}else{
+							limit();
+						}
+						lv=num_level(lv);
+						die();
+						timer_end();
+					}
+			}
+				}
+			}	goto menu;
+			}
+		}
+			}else if((x>557 && x<557+185)&&(y>400 && y<400+90)){
 			view_leaderboard();
 			leaderboard();
 			while(1){
@@ -454,8 +556,12 @@ void menu_utama(){
 				}
 			}
 		}
-	}
-
 }
+ }
+
+
+	
+
+
 
  
