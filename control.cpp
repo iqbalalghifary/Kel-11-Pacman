@@ -518,6 +518,38 @@ void menu_utama(){
 			}
 				}
 			}	goto menu;
+			}else if ((x>700 && x<700+450)&&(y>380 && y<380+300)){
+				while(1){
+				getmouseclick(WM_LBUTTONDOWN, x, y);
+				if((x>700 && x<700+450)&&(y>380 && y<380+300)){
+				int lv = 4;
+				while(lv<=4){
+					sc_lv(lv);
+					cleardevice();
+					soundgame();
+					level(lv);
+					ltemp = lv;
+					maping();
+					if(lv==2){
+					timer_start();	
+					}
+					while(lv==ltemp){
+						view_level(ltemp);
+						pointt();
+						tempp();
+						movement(lv);
+						if(e=='P' || e=='p' ){
+							pause();
+						}else{
+							limit();
+						}
+						lv=num_level(lv);
+						die();
+						timer_end();
+					}
+			}
+				}
+			}	goto menu;
 			}
 		}
 			}else if((x>557 && x<557+185)&&(y>400 && y<400+90)){
