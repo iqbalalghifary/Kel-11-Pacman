@@ -13,7 +13,7 @@ void menu_awal(){
 	readimagefile("assets//img//inGame//highscore.gif",x,y,185+x,90+y);
 	x=30;
 	y=600;
-	readimagefile("assets//img//inGame//cara.gif",x,y,110+x,90+y);
+	readimagefile("assets//img//inGame//cara.gif",x,y,80+x,80+y);
 	x=560;
 	y=500;
 	readimagefile("assets//img//inGame//about us.gif",x,y,185+x,90+y);
@@ -104,7 +104,7 @@ void how(){
 
 void pilihan(){
 	int x, y;
-	readimagefile("assets//img//opening//pixels-1.jpg",fullscreen);
+	readimagefile("assets//img//inGame//backgroundplay.jpeg",fullscreen);
 	x= 150;
    	y= 50;
 	readimagefile("assets//img//inGame//menulevel//level1.jpg",x,y,450+x,300+y);
