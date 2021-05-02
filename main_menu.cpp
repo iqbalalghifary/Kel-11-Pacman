@@ -1,7 +1,7 @@
 #include"header/pacman.h"
 void menu_awal(){
 	int x, y;
-   	readimagefile("assets//img//opening//background.jpeg",fullscreen);
+   	readimagefile("assets//img//opening//pixels-1.jpg",fullscreen);
    	x= 320;
    	y= -190;
    	readimagefile("assets//img//inGame//logo.gif", x,y,700+x,700+y);
@@ -102,4 +102,22 @@ void how(){
         readimagefile("assets//img//inGame//aboutUs//back.gif",x,y,90+x,90+y);
 }
 
-
+void pilihan(){
+	int x, y;
+	readimagefile("assets//img//opening//pixels-1.jpg",fullscreen);
+	x= 150;
+   	y= 50;
+	readimagefile("assets//img//inGame//menulevel//level1.jpg",x,y,450+x,300+y);
+	x= 700;
+	y= 50;
+	readimagefile("assets//img//inGame//menulevel//level2.jpg",x,y,450+x,300+y);
+	x= 150;
+	y= 380;
+	readimagefile("assets//img//inGame//menulevel//level3.jpg",x,y,450+x,300+y);
+	x= 700;
+	y= 380;
+	readimagefile("assets//img//inGame//menulevel//level4.jpg",x,y,450+x,300+y);
+	x=35;
+	y=652;
+    readimagefile("assets//img//inGame//aboutUs//back.gif",x,y,90+x,90+y);
+}

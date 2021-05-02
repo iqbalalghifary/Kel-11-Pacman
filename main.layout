@@ -39,21 +39,30 @@
 	</File>
 </CodeBlocks_layout_file>
 [Editors]
+<<<<<<< HEAD
 Order=6,8,7,9,10,11,12,13,1,0,3,4,5
 Focused=4
 [Editor_1]
 CursorCol=14
 CursorRow=324
 TopLine=7
+=======
+Order=6,8,7,9,10,11,12,13,0,3,4,5,1
+Focused=5
+[Editor_1]
+CursorCol=15
+CursorRow=500
+TopLine=483
+>>>>>>> 83fb5b83db2edae94e5a0462ced94aa2d582c906
 LeftChar=1
 [Editor_6]
 CursorCol=2
-CursorRow=9
+CursorRow=6
 TopLine=1
 LeftChar=1
 [Editor_7]
-CursorCol=1
-CursorRow=21
+CursorCol=16
+CursorRow=26
 TopLine=1
 LeftChar=1
 [Editor_8]
@@ -67,8 +76,8 @@ CursorRow=1
 TopLine=1
 LeftChar=1
 [Editor_10]
-CursorCol=26
-CursorRow=6
+CursorCol=1
+CursorRow=20
 TopLine=1
 LeftChar=1
 [Editor_11]
@@ -87,24 +96,36 @@ CursorRow=1
 TopLine=1
 LeftChar=1
 [Editor_0]
+<<<<<<< HEAD
 CursorCol=15
 CursorRow=91
 TopLine=1
+=======
+CursorCol=61
+CursorRow=42
+TopLine=14
+>>>>>>> 83fb5b83db2edae94e5a0462ced94aa2d582c906
 LeftChar=1
 [Editor_3]
 CursorCol=15
 CursorRow=20
-TopLine=2
+TopLine=4
 LeftChar=1
 [Editor_4]
+<<<<<<< HEAD
 CursorCol=50
 CursorRow=51
 TopLine=1
+=======
+CursorCol=6
+CursorRow=62
+TopLine=38
+>>>>>>> 83fb5b83db2edae94e5a0462ced94aa2d582c906
 LeftChar=1
 [Editor_5]
-CursorCol=53
-CursorRow=14
-TopLine=98
+CursorCol=3
+CursorRow=70
+TopLine=30
 LeftChar=1
 [Editor_2]
 CursorCol=38

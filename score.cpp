@@ -71,3 +71,5 @@ void view_leaderboard()
     readimagefile("assets//img//inGame//aboutUs//back.gif",x,y,80+x,80+y);
 
 }
+
+

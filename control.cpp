@@ -36,7 +36,7 @@ void tempMaps(int temp, int baris, int kolom){
 void limit(){
 	bool kiri, kanan, atas, bawah;
 
-	if(A[i-1][j]==0 || A[i][j+1]==1 ){
+	if(A[i-1][j]==0){
 		atas = true;
 		k=0;
 	}else if(A[i][j]==0 && ( A[i][j-1]==1 || A[i][j+1]==1 || A[i][j-1]==1)){
@@ -109,7 +109,7 @@ void ceksprite(int sprite, int baris, int kolom){
 			delay(150);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
 			run(baris,kolom,2);
-		}else if(temp == 0 && temp2 == 0 && A[i+1][j]!=0){
+		}else if(temp == 0 && temp2 == 0 && (A[i+1][j]!=0 || A[i-1][j]!=0)){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
 			delay(150);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)-20,40+40*i);
@@ -117,17 +117,19 @@ void ceksprite(int sprite, int baris, int kolom){
 		}else if(temp == 0 && temp2 ==0){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
 			delay(150);
-			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
+			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)+20,40+40*i);
 		}else if(temp == 0 && temp2 == 0 && A[i+1][j]!=1){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", 40*j,(40*i)+20,40+40*j,(40+40*i)+20);
 			delay(150);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)-20,40+40*i);
 			run(baris,kolom,2);
-		}else if(temp == 0 && temp2 == 0 &&  A[i-1][j]!=0){
-		 	readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)+20,40*i,(40+40*j)-20,40+40*i);
+		}
+       else if(temp == 0 && temp2 == 0 &&  A[i-1][j]!=0){
+		 	readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 			delay(150);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);	
-		}else if(temp == 0 && (A[i+1][j]==0 || A[i-1][j]==0)){
+		}
+		else if(temp == 0 && (A[i+1][j]==0 || A[i-1][j]==0)){
 			naik(baris, kolom, 1);
 		}else{
 			run(baris,kolom,1);
@@ -387,37 +389,17 @@ void timers(clock_t dur_h, clock_t dur_m,clock_t dur_s){
 	scoree.duration.second=dur_s;
 }
 
-void pilihan(){
-	pilihan:
-	int x, y;
-	readimagefile("assets//img//opening//background.jpeg",fullscreen);
-	x= 150;
-   	y= 50;
-	readimagefile("assets//img//inGame//level1.jpg",x,y,450+x,300+y);
-	x= 700;
-	y= 50;
-	readimagefile("assets//img//inGame//level1.jpg",x,y,450+x,300+y);
-	x= 150;
-	y= 380;
-	readimagefile("assets//img//inGame//level1.jpg",x,y,450+x,300+y);
-	x= 700;
-	y= 380;
-	readimagefile("assets//img//inGame//level1.jpg",x,y,450+x,300+y);
-	x=35;
-	y=652;
-    readimagefile("assets//img//inGame//aboutUs//back.gif",x,y,90+x,90+y);
-}
-
 void menu_utama(){
 	int x, y, ltemp;
-	
 	int p=1;
     soundmenu();
 	menu:
+	cleardevice();
 	menu_awal();
 	while(1){
 		getmouseclick(WM_LBUTTONDOWN, x, y);
 		if((x>580 && x<580+151)&&(y>310 && y<310+70)){
+			cleardevice();
 			pilihan();
 			while(1){
 				getmouseclick(WM_LBUTTONDOWN, x, y);

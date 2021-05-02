@@ -103,9 +103,11 @@ void maps(int mat, int baris, int kolom){
 		diamond(baris, kolom);
 	}	
 	if(mat==9){
-		 door(baris, kolom);
+		 boom(baris, kolom);
 	}
-	
+	if(mat==7){
+		door(baris, kolom);
+	}
 }
 
 void diamond(int mat, int baris, int kolom){
@@ -113,9 +115,14 @@ void diamond(int mat, int baris, int kolom){
 		diamond(baris, kolom);
 	}
 }
-void door(int mat, int baris, int kolom){
+void boom(int mat, int baris, int kolom){
 	if(mat==9){
-		 door(baris, kolom);
+		 boom(baris, kolom);
+	}
+}
+void door(int mat, int baris, int kolom){
+	if(mat==7){
+		door(baris, kolom);
 	}
 }
 void black(int i, int j){
@@ -127,9 +134,13 @@ void block(int i, int j){
 void diamond(int i, int j){
 	readimagefile("assets//img//inGame//maps//telor_maps.jpg", img_mtrx);
 }
-void door(int i, int j){
-	readimagefile("assets//img//inGame//maps//setan-atas.jpg", img_mtrx);
+void boom(int i, int j){
+	readimagefile("assets//img//inGame//maps//ketakutan.jpg", img_mtrx);
 }
+void door(int i, int j){
+	readimagefile("assets//img//inGame//maps//door.gif", img_mtrx);
+}
+
 void run(int i, int j, int p){
 	if(p==1){
 		readimagefile("assets//img//inGame//player//char//karakter1.gif", img_mtrx);
