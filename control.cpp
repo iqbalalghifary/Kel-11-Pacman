@@ -39,19 +39,24 @@ void limit(){
 	if(A[i-1][j]==0){
 		atas = true;
 		k=0;
-	}else if(A[i][j]==0 && ( A[i][j-1]==1 || A[i][j+1]==1 || A[i][j-1]==1)){
+	}else if(A[i][j]==0 && ( A[i][j-1]==1 || A[i][j+1]==1)){
 		atas = false;
 		k=0;
 	}else if((i<=0)||(A[i+1][j]==1)){
 		atas = false;
-	}else{
-		atas = true;
-	}
-
+	}else if(A[i][j]==0 && ( A[i][j-1]==0 || A[i][j+1]==0)){
+		atas = false;
+		k=0;
+   }else {
+   	    atas = false;
+   }
+	
 	if(A[i+1][j]==0|| (A[i][j]==0 && A[i+1][j]==0)){
 		bawah = true;
 	}else if((i>=17)||(A[i+1][j]==6)){
 		bawah = false;
+	}else{
+		bawah = true;
 	}
 
 	if((j<=0) || (A[i][j-1]==1) || (A[i][j-1]==1)){
