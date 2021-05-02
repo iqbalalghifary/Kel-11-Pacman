@@ -388,6 +388,7 @@ void timers(clock_t dur_h, clock_t dur_m,clock_t dur_s){
 }
 
 void pilihan(){
+	pilihan:
 	int x, y;
 	readimagefile("assets//img//opening//background.jpeg",fullscreen);
 	x= 150;
@@ -422,7 +423,7 @@ void menu_utama(){
 				getmouseclick(WM_LBUTTONDOWN, x, y);
 				if((x>150 && x<150+450)&&(y>50 && y<50+300)){
 				int lv = 1;
-				while(lv<=3){
+				while(lv<=1){
 					sc_lv(lv);
 					cleardevice();
 					soundgame();
@@ -432,7 +433,7 @@ void menu_utama(){
 					if(lv==1){
 					timer_start();	
 					}
-					while(lv==ltemp){
+					while(lv>=1){
 						view_level(ltemp);
 						pointt();
 						tempp();
@@ -452,7 +453,7 @@ void menu_utama(){
 				getmouseclick(WM_LBUTTONDOWN, x, y);
 				if((x>700 && x<700+450)&&(y>50 && y<50+300)){
 				int lv = 2;
-				while(lv<=3){
+				while(lv<=2){
 					sc_lv(lv);
 					cleardevice();
 					soundgame();
@@ -462,7 +463,7 @@ void menu_utama(){
 					if(lv==2){
 					timer_start();	
 					}
-					while(lv==ltemp){
+					while(lv>=2){
 						view_level(ltemp);
 						pointt();
 						tempp();
@@ -498,10 +499,10 @@ void menu_utama(){
 					level(lv);
 					ltemp = lv;
 					maping();
-					if(lv==2){
+					if(lv==3){
 					timer_start();	
 					}
-					while(lv==ltemp){
+					while(lv>=3){
 						view_level(ltemp);
 						pointt();
 						tempp();

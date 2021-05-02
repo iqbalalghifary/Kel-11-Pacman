@@ -48,7 +48,7 @@ void view_level(int l){
 
 void winner_view(int l){
 	cleardevice();
-	readimagefile("", fullscreen);
+	readimagefile("assets//img//inGame//win//WIN.jpg", fullscreen);
 	delay(2000);
 }
 

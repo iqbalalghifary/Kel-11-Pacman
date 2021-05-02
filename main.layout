@@ -40,11 +40,11 @@
 </CodeBlocks_layout_file>
 [Editors]
 Order=6,8,7,9,10,11,12,13,1,0,3,4,5
-Focused=1
+Focused=4
 [Editor_1]
-CursorCol=63
-CursorRow=389
-TopLine=367
+CursorCol=14
+CursorRow=324
+TopLine=7
 LeftChar=1
 [Editor_6]
 CursorCol=2
@@ -89,7 +89,7 @@ LeftChar=1
 [Editor_0]
 CursorCol=15
 CursorRow=91
-TopLine=80
+TopLine=1
 LeftChar=1
 [Editor_3]
 CursorCol=15
@@ -97,9 +97,9 @@ CursorRow=20
 TopLine=2
 LeftChar=1
 [Editor_4]
-CursorCol=6
-CursorRow=62
-TopLine=47
+CursorCol=50
+CursorRow=51
+TopLine=1
 LeftChar=1
 [Editor_5]
 CursorCol=53
