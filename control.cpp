@@ -48,7 +48,7 @@ void limit(){
 		atas = false;
 		k=0;
    }else {
-   	    atas = false;
+   	    atas = true;
    }
 	
 	if(A[i+1][j]==0|| (A[i][j]==0 && A[i+1][j]==0)){
