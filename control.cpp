@@ -28,9 +28,9 @@ void tempMaps(int temp, int baris, int kolom){
 	if(temp==0){
 		readimagefile("assets//img//inGame//maps//background.gif", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
 	}
-//	if(temp==1){
-//		readimagefile("", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
-//	}
+	if(temp==1){
+		readimagefile("assets//img//inGame//maps//background.gif", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
+	}
 }
 
 void limit(){
@@ -57,7 +57,7 @@ void limit(){
 		atas = false;
 		k=0;
    }else {
-   	    atas = true;
+   	    atas = false;
    }
    
 	
@@ -163,7 +163,7 @@ void ceksprite(int sprite, int baris, int kolom){
 		}else if(temp == 0 && temp2 == 0 && A[i+1][j]!=0){
 			readimagefile("assets//img//inGame//player//char//karakter2.jpg", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 			delay(10);
-			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)-20,40+40*i);
+			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 			run(baris,kolom,4);
 		}else if(temp == 0 && temp2 ==0){
 			readimagefile("assets//img//inGame//player//char//karakter2.jpg", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
@@ -184,7 +184,7 @@ void ceksprite(int sprite, int baris, int kolom){
 			}else if(temp2 != 0){
 				readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 				delay(150);
-				readimagefile("assets//img//inGame//maps//background.gif", 40*j,(40*i)+20,40+40*j,(40+40*i)-20);
+				readimagefile("assets//img//inGame//maps//background.gif", 40*j,(40*i)+20,40+40*j,(40+40*i)+20);
 			}
 		}
 		naik(baris,kolom,1);
@@ -301,7 +301,6 @@ void next_level(){
 
 void die(){
 	if(A[i+1][j]==9){
-		i= i + 1;
 		gameover(i,j);
 		gameover_screen(scoree.point, scoree.duration.hours, scoree.duration.minute, scoree.duration.second);
 	}
