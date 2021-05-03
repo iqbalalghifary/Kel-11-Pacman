@@ -47,25 +47,55 @@ void limit(){
 	}else if(A[i][j]==0 && ( A[i][j-1]==0 || A[i][j+1]==0)){
 		atas = false;
 		k=0;
+		
+   }else if(A[i][j]==0 && ( A[i][j-1]==3 || A[i][j+1]==3)){
+		atas = false;
+		k=0;
+	}else if((i<=0)||(A[i+1][j]==3)){
+		atas = false;
+	}else if(A[i][j]==0 && ( A[i][j-1]==0 || A[i][j+1]==0)){
+		atas = false;
+		k=0;
    }else {
    	    atas = true;
    }
+   
 	
-	if(A[i+1][j]==0|| (A[i][j]==0 && A[i+1][j]==0)){
+	if(A[i+1][j]==0){
 		bawah = true;
-	}else if((i>=17)||(A[i+1][j]==6)){
+		k=0;
+	}else if(A[i][j]==0 && ( A[i][j+1]==1 || A[i][j-1]==1)){
 		bawah = false;
-	}else{
-		bawah = true;
-	}
+		k=0;
+	}else if((i<=0)||(A[i-1][j]==1)){
+		bawah = false;
+	}else if(A[i][j]==0 && ( A[i][j+1]==0 || A[i][j-1]==0)){
+		bawah = false;
+		k=0;
+		
+   }else if(A[i][j]==0 && ( A[i][j+1]==3 || A[i][j-1]==3)){
+		bawah = false;
+		k=0;
+	}else if((i<=0)||(A[i-1][j]==3)){
+		bawah = false;
+	}else if(A[i][j]==0 && ( A[i][j+1]==0 || A[i][j-1]==0)){
+		bawah = false;
+		k=0;
+   }else {
+   	    bawah = true;
+   }
 
 	if((j<=0) || (A[i][j-1]==1) || (A[i][j-1]==1)){
+		kiri = false;
+	}else if((j<=0) || (A[i][j-1]==3) || (A[i][j-1]==3)){
 		kiri = false;
 	}else{
 		kiri = true;
 	}
 
 	if((j>=31)||(A[i][j+1]==1) || (A[i][j+1]==1)){
+		kanan = false;
+	}else if((j>=31)||(A[i][j+1]==3) || (A[i][j+1]==3)){
 		kanan = false;
 	}else{
 		kanan = true;
