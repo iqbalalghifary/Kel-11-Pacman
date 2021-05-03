@@ -36,7 +36,7 @@ void tempMaps(int temp, int baris, int kolom){
 void limit(){
 	bool kiri, kanan, atas, bawah;
 
-	if(A[i-1][j]==0){
+	if(A[i-1][j]==0 || A[i-1][j]==7 || A[i-1][j]==5 || A[i-1][j]==9 ){
 		atas = true;
 		k=0;
 	}else if(A[i][j]==0 && ( A[i][j-1]==1 || A[i][j+1]==1)){
@@ -44,7 +44,7 @@ void limit(){
 		k=0;
 	}else if((i<=0)||(A[i+1][j]==1)){
 		atas = false;
-	}else if(A[i][j]==0 && ( A[i][j-1]==0 || A[i][j+1]==0)){
+	}else if(A[i][j]==0 && A[i-1][j]==1 && ( A[i][j-1]==0 || A[i][j+1]==0)){
 		atas = false;
 		k=0;
 		
@@ -53,7 +53,7 @@ void limit(){
 		k=0;
 	}else if((i<=0)||(A[i+1][j]==3)){
 		atas = false;
-	}else if(A[i][j]==0 && ( A[i][j-1]==0 || A[i][j+1]==0)){
+	}else if(A[i][j]==0 && A[i-1][j]==3 && ( A[i][j-1]==0 || A[i][j+1]==0)){
 		atas = false;
 		k=0;
    }else {
@@ -61,29 +61,13 @@ void limit(){
    }
    
 	
-	if(A[i+1][j]==0){
+	if((j<=0) || (A[i+1][j]==1) || (A[i+1][j]==1)){
+		bawah = false;
+	}else if((j<=0) || (A[i+1][j]==3) || (A[i+1][j]==3)){
+		bawah = false;
+	}else{
 		bawah = true;
-		k=0;
-	}else if(A[i][j]==0 && ( A[i][j+1]==1 || A[i][j-1]==1)){
-		bawah = false;
-		k=0;
-	}else if((i<=0)||(A[i-1][j]==1)){
-		bawah = false;
-	}else if(A[i][j]==0 && ( A[i][j+1]==0 || A[i][j-1]==0)){
-		bawah = false;
-		k=0;
-		
-   }else if(A[i][j]==0 && ( A[i][j+1]==3 || A[i][j-1]==3)){
-		bawah = false;
-		k=0;
-	}else if((i<=0)||(A[i-1][j]==3)){
-		bawah = false;
-	}else if(A[i][j]==0 && ( A[i][j+1]==0 || A[i][j-1]==0)){
-		bawah = false;
-		k=0;
-   }else {
-   	    bawah = true;
-   }
+	}
 
 	if((j<=0) || (A[i][j-1]==1) || (A[i][j-1]==1)){
 		kiri = false;
@@ -326,7 +310,7 @@ void die(){
 int num_level(int l){
 	if(A[i][j]==7){
 		l++;
-		if(l > 2){
+		if(l > 1){
 			winner_view(scoree.point);
 			savescore_screen(scoree.point, scoree.duration.hours, scoree.duration.minute, scoree.duration.second);
 		}
