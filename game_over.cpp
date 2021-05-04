@@ -1,11 +1,5 @@
 #include"header/pacman.h"
 
-
-
-void gameover(int i, int j){
-	_beginthread(gameover_sound,0,NULL);
-}
-
 void gameover_screen(int p,clock_t dur_h, clock_t dur_m,clock_t dur_s){
 	readimagefile("assets//img//inGame//lose//LOSE.jpg", 0,0,1280,720);
 	delay(200);
@@ -14,8 +8,6 @@ void gameover_screen(int p,clock_t dur_h, clock_t dur_m,clock_t dur_s){
 
 void savescore_screen(int p,clock_t dur_h, clock_t dur_m,clock_t dur_s){
 	int x,y,j,k;
-	readimagefile("assets//img//inGame//nothing", 0,0,1280,720);
-	view_save_score();
 	char nama[11]= {'K','e','l','o','m','p','o','k',' ','1','1'};
 	settextstyle(2, 0, 8); outtextxy(600, 280 ,nama);
 	int ax, z=0;
@@ -23,7 +15,6 @@ void savescore_screen(int p,clock_t dur_h, clock_t dur_m,clock_t dur_s){
 		if(kbhit()){
 			ax = getch();
 			if(ax == 51){
-				readimagefile("assets//img//inGame//maps//score.jgp", 600, 300, 720, 600);
 			}
 			if(ax == 80){
 				nama[z]--;
@@ -85,9 +76,4 @@ int move_htp(int p){
 		}
 	}
 	return p;
-}
-
-void view_save_score(){
-	int x,y;
-
 }

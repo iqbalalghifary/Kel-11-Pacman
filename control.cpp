@@ -230,7 +230,6 @@ void movement(int l){
 		A[i][j]=temp;
 	}
 	tempMaps(temp, i, j);
-	finish(scoree.point, l);
 }
 
 void maping(){
@@ -270,38 +269,23 @@ void pause(){
 	}
 }
 
-void sc_lv(int l){
-	if(l==1){
-		readimagefile("assets//img//inGame//startt.jpg",fullscreen);
-		delay(1300);
-	}else{
-		readimagefile("assets//img//inGame//nextlevel.jpg",fullscreen);
-		delay(1300);
-	}
-}
-
 void next_level(){
 	A[1][2]=7;
 	if(i==1 && (j==1 || j==3)){
-		_beginthread(next_sound,0,NULL);
 	}
 	A[31][1]=7;
 	if(i==31 && (j==1 || j==3)){
-		_beginthread(next_sound,0,NULL);
 	}
 	A[15][15]=7;
 	if(i==15 && (j==1 || j==3)){
-		_beginthread(next_sound,0,NULL);
 	}
 	A[20][8]=7;
 	if(i==20 && (j==1 || j==3)){
-		_beginthread(next_sound,0,NULL);
 	}
 }
 
 void die(){
 	if(A[i+1][j]==9){
-		gameover(i,j);
 		gameover_screen(scoree.point, scoree.duration.hours, scoree.duration.minute, scoree.duration.second);
 	}
 }
@@ -424,7 +408,6 @@ void menu_utama(){
 				if((x>150 && x<150+450)&&(y>50 && y<50+300)){
 				int lv = 1;
 				while(lv<=1){
-					sc_lv(lv);
 					cleardevice();
 					soundgame();
 					level(lv);
@@ -434,7 +417,6 @@ void menu_utama(){
 					timer_start();	
 					}
 					while(lv>=1){
-						view_level(ltemp);
 						pointt();
 						tempp();
 						movement(lv);
@@ -454,7 +436,6 @@ void menu_utama(){
 				if((x>700 && x<700+450)&&(y>50 && y<50+300)){
 				int lv = 2;
 				while(lv<=2){
-					sc_lv(lv);
 					cleardevice();
 					soundgame();
 					level(lv);
@@ -464,7 +445,6 @@ void menu_utama(){
 					timer_start();	
 					}
 					while(lv>=2){
-						view_level(ltemp);
 						pointt();
 						tempp();
 						movement(lv);
@@ -493,7 +473,6 @@ void menu_utama(){
 				if((x>150 && x<150+450)&&(y>380 && y<380+300)){
 				int lv = 3;
 				while(lv<=3){
-					sc_lv(lv);
 					cleardevice();
 					soundgame();
 					level(lv);
@@ -503,7 +482,6 @@ void menu_utama(){
 					timer_start();	
 					}
 					while(lv>=3){
-						view_level(ltemp);
 						pointt();
 						tempp();
 						movement(lv);
@@ -525,17 +503,15 @@ void menu_utama(){
 				if((x>700 && x<700+450)&&(y>380 && y<380+300)){
 				int lv = 4;
 				while(lv<=4){
-					sc_lv(lv);
 					cleardevice();
 					soundgame();
 					level(lv);
 					ltemp = lv;
 					maping();
-					if(lv==2){
+					if(lv==4){
 					timer_start();	
 					}
-					while(lv==ltemp){
-						view_level(ltemp);
+					while(lv==4){
 						pointt();
 						tempp();
 						movement(lv);
@@ -558,7 +534,7 @@ void menu_utama(){
 			leaderboard();
 			while(1){
 				getmouseclick(WM_LBUTTONDOWN, x, y);
-					if((x>30 && x<30+150)&&(y>650 && y<700)){
+					if((x>30 && x<30+150)&&(y>640 && y<700)){
 					goto menu;
 				}
 			}
@@ -566,7 +542,7 @@ void menu_utama(){
 			while(1){
 				how();
 				getmouseclick(WM_LBUTTONDOWN, x, y);
-				if((x>35 && x<35+80)&&(y>652 && y<652+80)){
+				if((x>35 && x<35+80)&&(y>640 && y<652+80)){
 					goto menu;
 				}
 			}
@@ -574,7 +550,7 @@ void menu_utama(){
 			about();
 			while(1){
 				getmouseclick(WM_LBUTTONDOWN, x, y);
-				if((x>30 && x<30+150)&&(y>650 && y<700)){
+				if((x>30 && x<30+150)&&(y>640 && y<700)){
 					goto menu;
 				}
 			}
