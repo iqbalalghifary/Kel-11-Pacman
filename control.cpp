@@ -250,25 +250,6 @@ void maping(){
 	j=0;
 }
 
-void pause(){
-	char msg[13];
-	putimage(0,0,map, COPY_PUT);
-	settextstyle(2, 0, 8);
-	while(e!='c'){
-		sprintf(msg, "pause");
-		outtextxy(600,330,msg);
-		sprintf(msg, "press 'c' to continue");
-		outtextxy(500,530,msg);
-		e=getch();
-	}
-	putimage(0,0,map, COPY_PUT);
-	for(int a=0;a<BRS;a++){
-		for(int b=0;b<KLM;b++){
-			diamond(A[a][b],a,b);
-		}
-	}
-}
-
 void next_level(){
 	A[1][2]=7;
 	if(i==1 && (j==1 || j==3)){
@@ -420,11 +401,7 @@ void menu_utama(){
 						pointt();
 						tempp();
 						movement(lv);
-						if(e=='P' || e=='p' ){
-							pause();
-						}else{
-							limit();
-						}
+						limit();
 						lv=num_level(lv);
 						die();
 						timer_end();
@@ -445,14 +422,10 @@ void menu_utama(){
 					timer_start();	
 					}
 					while(lv>=2){
-						pointt();
+					pointt();
 						tempp();
 						movement(lv);
-						if(e=='P' || e=='p' ){
-							pause();
-						}else{
-							limit();
-						}
+						limit();
 						lv=num_level(lv);
 						die();
 						timer_end();
@@ -482,14 +455,10 @@ void menu_utama(){
 					timer_start();	
 					}
 					while(lv>=3){
-						pointt();
+					pointt();
 						tempp();
 						movement(lv);
-						if(e=='P' || e=='p' ){
-							pause();
-						}else{
-							limit();
-						}
+						limit();
 						lv=num_level(lv);
 						die();
 						timer_end();
@@ -512,14 +481,10 @@ void menu_utama(){
 					timer_start();	
 					}
 					while(lv==4){
-						pointt();
+					pointt();
 						tempp();
 						movement(lv);
-						if(e=='P' || e=='p' ){
-							pause();
-						}else{
-							limit();
-						}
+						limit();
 						lv=num_level(lv);
 						die();
 						timer_end();

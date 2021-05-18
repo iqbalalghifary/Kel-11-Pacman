@@ -40,11 +40,11 @@
 </CodeBlocks_layout_file>
 [Editors]
 <<<<<<< HEAD
-Order=6,8,7,9,10,11,12,13,3,4,5,1,0,2
-Focused=2
+Order=6,8,7,9,10,5,11,12,13,4,0,3,1,2
+Focused=1
 [Editor_1]
-CursorCol=21
-CursorRow=434
+CursorCol=15
+CursorRow=484
 TopLine=1
 =======
 Order=6,8,7,9,10,11,12,13,0,3,4,5,1
@@ -57,13 +57,13 @@ TopLine=483
 >>>>>>> 83fb5b83db2edae94e5a0462ced94aa2d582c906
 LeftChar=1
 [Editor_6]
-CursorCol=1
-CursorRow=5
+CursorCol=2
+CursorRow=9
 TopLine=1
 LeftChar=1
 [Editor_7]
-CursorCol=9
-CursorRow=7
+CursorCol=19
+CursorRow=17
 TopLine=1
 LeftChar=1
 [Editor_8]
@@ -77,8 +77,8 @@ CursorRow=1
 TopLine=1
 LeftChar=1
 [Editor_10]
-CursorCol=1
-CursorRow=20
+CursorCol=32
+CursorRow=12
 TopLine=1
 LeftChar=1
 [Editor_11]
@@ -87,13 +87,13 @@ CursorRow=4
 TopLine=1
 LeftChar=1
 [Editor_12]
-CursorCol=22
-CursorRow=6
+CursorCol=24
+CursorRow=2
 TopLine=1
 LeftChar=1
 [Editor_13]
-CursorCol=21
-CursorRow=1
+CursorCol=18
+CursorRow=3
 TopLine=1
 LeftChar=1
 [Editor_0]
@@ -108,15 +108,15 @@ TopLine=14
 >>>>>>> 83fb5b83db2edae94e5a0462ced94aa2d582c906
 LeftChar=1
 [Editor_3]
-CursorCol=15
-CursorRow=32
-TopLine=1
+CursorCol=2
+CursorRow=17
+TopLine=10
 LeftChar=1
 [Editor_4]
 <<<<<<< HEAD
-CursorCol=1
-CursorRow=60
-TopLine=1
+CursorCol=7
+CursorRow=5
+TopLine=17
 =======
 CursorCol=6
 CursorRow=62
@@ -124,12 +124,12 @@ TopLine=38
 >>>>>>> 83fb5b83db2edae94e5a0462ced94aa2d582c906
 LeftChar=1
 [Editor_5]
-CursorCol=4
-CursorRow=21
-TopLine=1
+CursorCol=23
+CursorRow=89
+TopLine=138
 LeftChar=1
 [Editor_2]
-CursorCol=60
-CursorRow=19
+CursorCol=15
+CursorRow=15
 TopLine=1
 LeftChar=1

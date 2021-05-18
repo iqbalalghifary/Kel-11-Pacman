@@ -8,7 +8,6 @@ void pointt();
 void tempp();
 void movement(int l);
 void maping();
-void pause();
 void next_level();
 void die();
 int num_level(int l);
