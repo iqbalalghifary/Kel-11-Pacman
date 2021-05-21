@@ -9,7 +9,7 @@ void gameover_screen(int p,clock_t dur_h, clock_t dur_m,clock_t dur_s){
 void savescore_screen(int p,clock_t dur_h, clock_t dur_m,clock_t dur_s){
 	int x,y,j,k;
 	char nama[11]= {'K','e','l','o','m','p','o','k',' ','1','1'};
-	settextstyle(2, 0, 8); outtextxy(600, 280 ,nama);
+	settextstyle(2, 0, 8); outtextxy(600, 320 ,nama);
 	int ax, z=0;
 	while(1){
 		if(kbhit()){
@@ -49,14 +49,14 @@ void view2_score(int p){
 	char msg[13];
 	settextstyle(2, 0, 8);
 	sprintf(msg, "score \n %d", p);
-	outtextxy(600,320,msg);
+	outtextxy(600,360,msg);
 }
 
 void view2_time(clock_t dur_h, clock_t dur_m,clock_t dur_s){
 	char msg[20];
 	settextstyle(2, 0, 8);
 	sprintf(msg, "Time %d:%d:%d", dur_h,dur_m,dur_s);
-	outtextxy(600,360,msg);
+	outtextxy(600,400,msg);
 }
 
 int move_htp(int p){
