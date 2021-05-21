@@ -29,36 +29,57 @@ void tempMaps(int temp, int baris, int kolom){
 		readimagefile("assets//img//inGame//maps//background.gif", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
 	}
 	if(temp==1){
-		readimagefile("assets//img//inGame//maps//bata.jpg", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
+		readimagefile("assets//img//inGame//maps//background.gif", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
 	}
 }
 
 void limit(){
 	bool kiri, kanan, atas, bawah;
 
-	if(A[i-1][j]==0){
+	if(A[i-1][j]==0 || A[i-1][j]==7 || A[i-1][j]==5 || A[i-1][j]==9 ){
 		atas = true;
 		k=0;
-	}else if(A[i][j]==0 && (A[i][j+1]==1 || A[i][j-1]==1 || A[i][j+1]==1 || A[i][j-1]==1)){
-		atas = true;
+	}else if(A[i][j]==0 && ( A[i][j-1]==1 || A[i][j+1]==1)){
+		atas = false;
 		k=0;
 	}else if((i<=0)||(A[i+1][j]==1)){
 		atas = false;
-	}
-
-	if(A[i+1][j]==0|| (A[i][j]==0 && A[i+1][j]==0)){
-		bawah = true;
-	}else if((i>=17)||(A[i+1][j]==6)){
+	}else if(A[i][j]==0 && A[i-1][j]==1 && ( A[i][j-1]==0 || A[i][j+1]==0)){
+		atas = false;
+		k=0;
+		
+   }else if(A[i][j]==0 && ( A[i][j-1]==3 || A[i][j+1]==3)){
+		atas = false;
+		k=0;
+	}else if((i<=0)||(A[i+1][j]==3)){
+		atas = false;
+	}else if(A[i][j]==0 && A[i-1][j]==3 && ( A[i][j-1]==0 || A[i][j+1]==0)){
+		atas = false;
+		k=0;
+   }else {
+   	    atas = false;
+   }
+   
+	
+	if((j<=0) || (A[i+1][j]==1) || (A[i+1][j]==1)){
 		bawah = false;
+	}else if((j<=0) || (A[i+1][j]==3) || (A[i+1][j]==3)){
+		bawah = false;
+	}else{
+		bawah = true;
 	}
 
 	if((j<=0) || (A[i][j-1]==1) || (A[i][j-1]==1)){
+		kiri = false;
+	}else if((j<=0) || (A[i][j-1]==3) || (A[i][j-1]==3)){
 		kiri = false;
 	}else{
 		kiri = true;
 	}
 
 	if((j>=31)||(A[i][j+1]==1) || (A[i][j+1]==1)){
+		kanan = false;
+	}else if((j>=31)||(A[i][j+1]==3) || (A[i][j+1]==3)){
 		kanan = false;
 	}else{
 		kanan = true;
@@ -107,21 +128,27 @@ void ceksprite(int sprite, int baris, int kolom){
 			delay(150);
 			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
 			run(baris,kolom,2);
-		}else if(temp == 0 && temp2 == 0 && A[i+1][j]!=0){
+		}else if(temp == 0 && temp2 == 0 && (A[i+1][j]!=0 || A[i-1][j]!=0)){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
 			delay(150);
-			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
+			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)-20,40+40*i);
 			run(baris,kolom,2);
 		}else if(temp == 0 && temp2 ==0){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
 			delay(150);
-			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
-		}else if(temp == 0 && temp2 == 0 && A[i+1][j]==0){
+			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)+20,40+40*i);
+		}else if(temp == 0 && temp2 == 0 && A[i+1][j]!=1){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", 40*j,(40*i)+20,40+40*j,(40+40*i)+20);
 			delay(150);
-			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
+			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)-20,40+40*i);
 			run(baris,kolom,2);
-		}else if(temp == 0 && (A[i+1][j]==0 || A[i-1][j]==0)){
+		}
+       else if(temp == 0 && temp2 == 0 &&  A[i-1][j]!=0){
+		 	readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
+			delay(150);
+			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);	
+		}
+		else if(temp == 0 && (A[i+1][j]==0 || A[i-1][j]==0)){
 			naik(baris, kolom, 1);
 		}else{
 			run(baris,kolom,1);
@@ -136,7 +163,7 @@ void ceksprite(int sprite, int baris, int kolom){
 		}else if(temp == 0 && temp2 == 0 && A[i+1][j]!=0){
 			readimagefile("assets//img//inGame//player//char//karakter2.jpg", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 			delay(10);
-			readimagefile("assets//img//inGame//maps//background.gif", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
+			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 			run(baris,kolom,4);
 		}else if(temp == 0 && temp2 ==0){
 			readimagefile("assets//img//inGame//player//char//karakter2.jpg", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
@@ -153,11 +180,11 @@ void ceksprite(int sprite, int baris, int kolom){
 			if(temp2 == 0){
 				readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 				delay(150);
-				readimagefile("assets//img//inGame//maps//bata.jpg", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
+				readimagefile("assets//img//inGame//maps//purple.jpg", (40*j)-20,40*i,(40+40*j)-20,40+40*i);
 			}else if(temp2 != 0){
 				readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 				delay(150);
-				readimagefile("assets//img//inGame//maps//background.gif", 40*j,(40*i)-20,40+40*j,(40+40*i)-20);
+				readimagefile("assets//img//inGame//maps//background.gif", 40*j,(40*i)+20,40+40*j,(40+40*i)+20);
 			}
 		}
 		naik(baris,kolom,1);
@@ -166,7 +193,7 @@ void ceksprite(int sprite, int baris, int kolom){
 		if(temp == 0 && (temp2 ==0 || A[i+1][j]==0) && A[i+1][j]!=1){
 			readimagefile("assets//img//inGame//player//char//karakter1.gif", 40*j,(40*i)+20,40+40*j,(40+40*i)+20);
 			delay(150);
-			readimagefile("assets//img//inGame//maps//bata.jpg", 40*j,(40*i)+20,40+40*j,(40+40*i)+20);
+			readimagefile("assets//img//inGame//maps//purple.jpg", 40*j,(40*i)+20,40+40*j,(40+40*i)+20);
 		}else{
 			readimagefile("assets//img//inGame//player//char//karakter2.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 			delay(150);
@@ -203,7 +230,6 @@ void movement(int l){
 		A[i][j]=temp;
 	}
 	tempMaps(temp, i, j);
-	finish(scoree.point, l);
 }
 
 void maping(){
@@ -224,58 +250,23 @@ void maping(){
 	j=0;
 }
 
-void pause(){
-	char msg[13];
-	putimage(0,0,map, COPY_PUT);
-	settextstyle(2, 0, 8);
-	while(e!='c'){
-		sprintf(msg, "pause");
-		outtextxy(600,330,msg);
-		sprintf(msg, "press 'c' to continue");
-		outtextxy(500,530,msg);
-		e=getch();
-	}
-	putimage(0,0,map, COPY_PUT);
-	for(int a=0;a<BRS;a++){
-		for(int b=0;b<KLM;b++){
-			diamond(A[a][b],a,b);
-		}
-	}
-}
-
-void sc_lv(int l){
-	if(l==1){
-		readimagefile("assets//img//inGame//startt.jpg",fullscreen);
-		delay(1300);
-	}else{
-		readimagefile("assets//img//inGame//nextlevel.jpg",fullscreen);
-		delay(1300);
-	}
-}
-
 void next_level(){
 	A[1][2]=7;
 	if(i==1 && (j==1 || j==3)){
-		_beginthread(next_sound,0,NULL);
 	}
 	A[31][1]=7;
 	if(i==31 && (j==1 || j==3)){
-		_beginthread(next_sound,0,NULL);
 	}
 	A[15][15]=7;
 	if(i==15 && (j==1 || j==3)){
-		_beginthread(next_sound,0,NULL);
 	}
 	A[20][8]=7;
 	if(i==20 && (j==1 || j==3)){
-		_beginthread(next_sound,0,NULL);
 	}
 }
 
 void die(){
 	if(A[i+1][j]==9){
-		i= i + 1;
-		gameover(i,j);
 		gameover_screen(scoree.point, scoree.duration.hours, scoree.duration.minute, scoree.duration.second);
 	}
 }
@@ -283,7 +274,7 @@ void die(){
 int num_level(int l){
 	if(A[i][j]==7){
 		l++;
-		if(l > 2){
+		if(l > 1){
 			winner_view(scoree.point);
 			savescore_screen(scoree.point, scoree.duration.hours, scoree.duration.minute, scoree.duration.second);
 		}
@@ -301,7 +292,7 @@ void save(char* name, int l){
 	p.duration.hours = scoree.duration.hours;
 	p.duration.minute = scoree.duration.minute;
 	p.duration.second = scoree.duration.second;
-	if((fp=fopen("FILE_LodeRuner.dat", "ab+")) == NULL){
+	if((fp=fopen("File_highscore.dat", "ab+")) == NULL){
 		printf("File tidak dapat dibuka!\n");
 	}else{
 		fwrite(&p, sizeof(sc), 1, fp);
@@ -314,20 +305,22 @@ void leaderboard(){
 	FILE *fp;
 	char view[15];
 	int n=1;
-	int tinggi = 250;
+	int tinggi = 300;
 	Sort_file();
-	if((fp=fopen("FILE_LodeRuner.dat", "rb")) == NULL){
+	if((fp=fopen("File_highscore.dat", "rb")) == NULL){
 		printf("File tidak dapat dibuka!\n");
 	}else{
 		rewind(fp);
 		while (fread(&p, sizeof(sc), 1, fp) == 1 && n <= 5){
 			settextstyle(2, 0, 8);
-			sprintf(view,"%i",n);
-			outtextxy(430, tinggi, view);
-			sprintf(view,"%s",p.name);
-			outtextxy(460, tinggi, view);
-			sprintf(view,"%d",p.point);
-			outtextxy(900, tinggi, view);
+//			sprintf(view,"%i",n);
+//			outtextxy(320, tinggi, view);
+		
+			sprintf(view,"%s", p.name);
+			outtextxy(450, tinggi, view);
+	
+			sprintf(view,"%d", 	p.point);
+			outtextxy(770, tinggi, view);
 			tinggi += 40;
 			n++;
 		}
@@ -344,7 +337,7 @@ void Sort_file(){
 
 	FILE *fp;
 
-	if ((fp=fopen("FILE_LodeRuner.DAT", "rb+"))==NULL)
+	if ((fp=fopen("File_highscore.dat", "rb+"))==NULL)
       {
             printf ("File tidak dapat dibuka\n");
       }
@@ -378,68 +371,155 @@ void timers(clock_t dur_h, clock_t dur_m,clock_t dur_s){
 	scoree.duration.minute=dur_m;
 	scoree.duration.second=dur_s;
 }
+
 void menu_utama(){
 	int x, y, ltemp;
-	int lv = 1;
 	int p=1;
     soundmenu();
 	menu:
+	cleardevice();
 	menu_awal();
 	while(1){
 		getmouseclick(WM_LBUTTONDOWN, x, y);
-		if((x>105 && x<105+130)&&(y>430 && y<490)){
-			while(lv<=2){
-				sc_lv(lv);
-				cleardevice();
-				soundgame();
-				level(lv);
-				ltemp = lv;
-				maping();
-				if(lv==1){
-					timer_start();
-				}
-				while(lv==ltemp){
-					view_level(ltemp);
-					pointt();
-					tempp();
-					movement(lv);
-                    if(e=='p' || e=='P'){
-						pause();
-					}else{
-						limit();
+		if((x>580 && x<580+151)&&(y>310 && y<310+70)){
+			cleardevice();
+			pilihan();
+			while(1){
+				getmouseclick(WM_LBUTTONDOWN, x, y);
+				if((x>150 && x<150+450)&&(y>50 && y<50+300)){
+				int lv = 1;
+				while(lv<=1){
+					cleardevice();
+					soundgame();
+					level(lv);
+					ltemp = lv;
+					maping();
+					if(lv==1){
+					timer_start();	
 					}
-					lv = num_level(lv);
-					die();
-					timer_end();
+					while(lv>=1){
+						pointt();
+						tempp();
+						movement(lv);
+						limit();
+						lv=num_level(lv);
+						die();
+						timer_end();
+					}
+				}
+			    }else if ((x>700 && x<700+450)&&(y>50 && y<50+300)){
+				while(1){
+				getmouseclick(WM_LBUTTONDOWN, x, y);
+				if((x>700 && x<700+450)&&(y>50 && y<50+300)){
+				int lv = 2;
+				while(lv<=2){
+					cleardevice();
+					soundgame();
+					level(lv);
+					ltemp = lv;
+					maping();
+					if(lv==2){
+					timer_start();	
+					}
+					while(lv>=2){
+					pointt();
+						tempp();
+						movement(lv);
+						limit();
+						lv=num_level(lv);
+						die();
+						timer_end();
+					}
+			}
+				}
+			}	goto menu;
+			}else if ((x>35 && x<35+90)&&(y>652 && y<652+90)){
+				while(1){
+				getmouseclick(WM_LBUTTONDOWN, x, y);
+				if((x>35 && x<35+90)&&(y>652 && y<652+90)){
+					goto menu;
 				}
 			}
-			goto menu;
-		}else if((x>245 && x<245+250)&&(y>430 && y<490)){
+	}  else if ((x>150 && x<150+450)&&(y>380 && y<380+300)){
+				while(1){
+				getmouseclick(WM_LBUTTONDOWN, x, y);
+				if((x>150 && x<150+450)&&(y>380 && y<380+300)){
+				int lv = 3;
+				while(lv<=3){
+					cleardevice();
+					soundgame();
+					level(lv);
+					ltemp = lv;
+					maping();
+					if(lv==3){
+					timer_start();	
+					}
+					while(lv>=3){
+					pointt();
+						tempp();
+						movement(lv);
+						limit();
+						lv=num_level(lv);
+						die();
+						timer_end();
+					}
+			}
+				}
+			}	goto menu;
+			}else if ((x>700 && x<700+450)&&(y>380 && y<380+300)){
+				while(1){
+				getmouseclick(WM_LBUTTONDOWN, x, y);
+				if((x>700 && x<700+450)&&(y>380 && y<380+300)){
+				int lv = 4;
+				while(lv<=4){
+					cleardevice();
+					soundgame();
+					level(lv);
+					ltemp = lv;
+					maping();
+					if(lv==4){
+					timer_start();	
+					}
+					while(lv==4){
+					pointt();
+						tempp();
+						movement(lv);
+						limit();
+						lv=num_level(lv);
+						die();
+						timer_end();
+					}
+			}
+				}
+			}	goto menu;
+			}
+		}
+			}else if((x>557 && x<557+185)&&(y>400 && y<400+90)){
 			view_leaderboard();
 			leaderboard();
 			while(1){
 				getmouseclick(WM_LBUTTONDOWN, x, y);
-				if((x>600 && x<600+150)&&(y>550 && y<550+50)){
+					if((x>30 && x<30+150)&&(y>640 && y<700)){
 					goto menu;
 				}
 			}
-		}else if((x>505 && x<505+280)&&(y>430 && y<490)){
+		}else if((x>40 && x<40+80)&&(y>600 && y<680)){
 			while(1){
 				how();
 				getmouseclick(WM_LBUTTONDOWN, x, y);
-				if((x>150 && x<150+150)&&(y>600 && y<650)){
+				if((x>35 && x<35+80)&&(y>640 && y<652+80)){
 					goto menu;
 				}
 			}
-		}else if((x>795 && x<795+230)&&(y>430 && y<490)){
+		}else if((x>560 && x<560+185)&&(y>500 && y<500+90)){
 			about();
 			while(1){
 				getmouseclick(WM_LBUTTONDOWN, x, y);
-				if((x>30 && x<30+150)&&(y>650 && y<700)){
+				if((x>30 && x<30+150)&&(y>640 && y<700)){
 					goto menu;
 				}
 			}
-		}else if((x>1100 && x<1100+120)&&(y>600 && y<720)){
+		}else if((x>580 && x<580+125)&&(y>600 && y<600+60)){
 			keluar();
 			while(1){
 				getmouseclick(WM_LBUTTONDOWN, x, y);
@@ -450,5 +530,12 @@ void menu_utama(){
 				}
 			}
 		}
-	}
 }
+ }
+
+
+	
+
+
+
+ 

@@ -1,21 +1,25 @@
 #include"header/pacman.h"
 void menu_awal(){
 	int x, y;
-   	readimagefile("",fullscreen);
-	x= 505;
-   	y= 400;
-	readimagefile("",x,y,250+x,100+y);
-	x=1000;
-	y=10;
-	readimagefile("",x,y,80+x,120+y);
-	x=1100;
-	y=10;
-	readimagefile("",x,y,100+x,100+y);
-	//x=795;
-	//readimagefile("assets//img//opening//aboutUs.gif",x,y,230+x,60+y);
-	x=1100;
+   	readimagefile("assets//img//opening//pixels-1.jpg",fullscreen);
+   	x= 320;
+   	y= -190;
+   	readimagefile("assets//img//inGame//logo.gif", x,y,700+x,700+y);
+	x= 580;
+   	y= 310;
+	readimagefile("assets//img//inGame//a.gif",x,y,151+x,70+y);
+	x=557;
+	y=400;
+	readimagefile("assets//img//inGame//highscore.gif",x,y,185+x,90+y);
+	x=30;
 	y=600;
-	readimagefile("",x,y,120+x,120+y);
+	readimagefile("assets//img//inGame//cara.gif",x,y,80+x,80+y);
+	x=560;
+	y=500;
+	readimagefile("assets//img//inGame//about us.gif",x,y,185+x,90+y);
+	x=580;
+	y=600;
+	readimagefile("assets//img//inGame//exit.gif",x,y,151+x,70+y);
 }
 
 void splashscreen(){
@@ -30,120 +34,90 @@ void splashscreen(){
 	k=((getmaxx()/2)-(i/2));
 	l=((getmaxy()/2)-(j/2));
 
-		readimagefile("assets//img//opening//ezgif-frame-001.jpg",fullscreen);
-		delay(50);
-		readimagefile("assets//img//opening//ezgif-frame-034.jpg",fullscreen);
-		delay(50);
-		readimagefile("assets//img//opening//ezgif-frame-035.jpg",fullscreen);
-		delay(50);
-		readimagefile("assets//img//opening//ezgif-frame-036.jpg",fullscreen);
-		delay(50);
-		readimagefile("assets//img//opening//ezgif-frame-037.jpg",fullscreen);
-		delay(50);
-		readimagefile("assets//img//opening//ezgif-frame-038.jpg",fullscreen);
-		delay(50);
-		readimagefile("assets//img//opening//ezgif-frame-039.jpg",fullscreen);
-		delay(50);
-		readimagefile("assets//img//opening//ezgif-frame-040.jpg",fullscreen);
-		delay(50);
-		readimagefile("assets//img//opening//ezgif-frame-041.jpg",fullscreen);
-		delay(50);
-		readimagefile("assets//img//opening//ezgif-frame-042.jpg",fullscreen);
-		delay(50);
-		readimagefile("assets//img//opening//ezgif-frame-043.jpg",fullscreen);
-		delay(50);
-		readimagefile("assets//img//opening//ezgif-frame-044.jpg",fullscreen);
-		delay(50);
-		readimagefile("assets//img//opening//ezgif-frame-054.jpg",fullscreen);
-		delay(50);
-		readimagefile("assets//img//opening//ezgif-frame-056.jpg",fullscreen);
-		delay(50);
-		readimagefile("assets//img//opening//ezgif-frame-064.jpg",fullscreen);
-		delay(10);
-		readimagefile("assets//img//opening//ezgif-frame-066.jpg",fullscreen);
-		delay(10);
-		readimagefile("assets//img//opening//ezgif-frame-068.jpg",fullscreen);
-		delay(10);
-		readimagefile("assets//img//opening//ezgif-frame-069.jpg",fullscreen);
-		delay(10);
-		readimagefile("assets//img//opening//ezgif-frame-070.jpg",fullscreen);
-		delay(10);
-		readimagefile("assets//img//opening//ezgif-frame-071.jpg",fullscreen);
-		delay(10);
-		readimagefile("assets//img//opening//ezgif-frame-074.jpg",fullscreen);
-		delay(50);
-
-
-		readimagefile("assets//img//loading//load1.jpg", k, l+100, k+i, l+j+100);
-		delay(250);
-		readimagefile("assets//img//loading//load2.jpg", k, l+100, k+i, l+j+100);
-		delay(250);
-		readimagefile("assets//img//loading//load3.jpg", k, l+100, k+i, l+j+100);
-		delay(250);
-		readimagefile("assets//img//loading//load4.jpg", k, l+100, k+i, l+j+100);
-		delay(250);
-		readimagefile("assets//img//loading//load5.jpg", k, l+100, k+i, l+j+100);
-		delay(250);
-		readimagefile("assets//img//loading//load6.jpg", k, l+100, k+i, l+j+100);
-		delay(250);
-		readimagefile("assets//img//loading//load7.jpg", k, l+100, k+i, l+j+100);
-		delay(250);
-		readimagefile("assets//img//loading//load8.jpg", k, l+100, k+i, l+j+100);
-		delay(250);
-		readimagefile("assets//img//loading//load9.jpg", k, l+100, k+i, l+j+100);
-		delay(300);
+		readimagefile("assets//img//opening//background1.jpeg",fullscreen);
+		delay(1200);
+//	    readimagefile("assets//img//opening//1.jpg",fullscreen);
+//		readimagefile("assets//img//opening//2.jpg",fullscreen);
+//		readimagefile("assets//img//opening//3.jpg",fullscreen);
+//		readimagefile("assets//img//opening//4.jpg",fullscreen);
+//		readimagefile("assets//img//opening//5.jpg",fullscreen);
+//		readimagefile("assets//img//opening//6.jpg",fullscreen);
+//		readimagefile("assets//img//opening//7.jpg",fullscreen);
+//		readimagefile("assets//img//opening//8.jpg",fullscreen);
+//		readimagefile("assets//img//opening//9.jpg",fullscreen);
+//		readimagefile("assets//img//opening//10.jpg",fullscreen);
+//		readimagefile("assets//img//opening//11.jpg",fullscreen);
+//		readimagefile("assets//img//opening//12.jpg",fullscreen);
+		readimagefile("assets//img//opening//13.jpg",fullscreen);
+		readimagefile("assets//img//opening//14.jpg",fullscreen);
+		readimagefile("assets//img//opening//15.jpg",fullscreen);
+		readimagefile("assets//img//opening//16.jpg",fullscreen);
+		readimagefile("assets//img//opening//17.jpg",fullscreen);
+		readimagefile("assets//img//opening//18.jpg",fullscreen);
+        readimagefile("assets//img//opening//19.jpg",fullscreen);
+		readimagefile("assets//img//opening//20.jpg",fullscreen);
+		readimagefile("assets//img//opening//21.jpg",fullscreen);
+		readimagefile("assets//img//opening//22.jpg",fullscreen);
+		readimagefile("assets//img//opening//23.jpg",fullscreen);
+		readimagefile("assets//img//opening//24.jpg",fullscreen);
+		readimagefile("assets//img//opening//25.jpg",fullscreen);
+		readimagefile("assets//img//opening//26.jpg",fullscreen);
+		readimagefile("assets//img//opening//27.jpg",fullscreen);
+		readimagefile("assets//img//opening//28.jpg",fullscreen);
+		readimagefile("assets//img//opening//29.jpg",fullscreen);
+		readimagefile("assets//img//opening//30.jpg",fullscreen);
+        readimagefile("assets//img//opening//31.jpg",fullscreen);
+        readimagefile("assets//img//opening//32.jpg",fullscreen);
+		readimagefile("assets//img//opening//33.jpg",fullscreen);
+		readimagefile("assets//img//opening//34.jpg",fullscreen);
+		readimagefile("assets//img//opening//35.jpg",fullscreen);
+		readimagefile("assets//img//opening//36.jpg",fullscreen);
+		readimagefile("assets//img//opening//37.jpg",fullscreen);
+		readimagefile("assets//img//opening//38.jpg",fullscreen);
+		readimagefile("assets//img//opening//39.jpg",fullscreen);
+		delay(100);
 
 
 }
 
 void about(){
 	int x, y;
-   	readimagefile("",fullscreen);
-	x=520;
-	y=30;
-	readimagefile("",x,y,200+x,50+y);
-
-   	x=70;
-	y=80;
-	readimagefile("",x,y,150+x,250+y);
-
-	x=550;
-	y=80;
-	readimagefile("",x,y,150+x,250+y);
-
-    x=1070;
-	y=80;
-	readimagefile("",x,y,150+x,250+y);
-
-	x=70;
-	y=370;
-	readimagefile("",x,y,150+x,250+y);
-
-	x=550;
-	y=370;
-	readimagefile("",x,y,150+x,250+y);
-
-	x=1070;
-	y=370;
-	readimagefile("",x,y,150+x,250+y);
-
-	x=30;
-	y=650;
-	readimagefile("",x,y,150+x,50+y);
+   	readimagefile("assets//img//inGame//aboutUs//aboutus.jpg",fullscreen);
+	x=35;
+	y=652;
+    readimagefile("assets//img//inGame//aboutUs//back.gif",x,y,90+x,90+y);
 }
 
 void keluar(){
-	readimagefile("",420,240,420+420,240+240);
-	readimagefile("",470,390,520,440);
-	readimagefile("",740,390,790,440);
+	readimagefile("assets//img//opening//yakin.gif",420,240,420+420,240+240);
+	readimagefile("assets//img//opening//tidak.jpg",470,390,520,440);
+	readimagefile("assets//img//opening//ya.jpg",740,390,790,440);
 }
 
 void how(){
     int x,y;
     x=35;
     y=652;
-		readimagefile("",fullscreen);
-        readimagefile("",x,y,80+x,80+y);
+		readimagefile("assets//img//inGame//tutor-game.jpg",fullscreen);
+        readimagefile("assets//img//inGame//aboutUs//back.gif",x,y,90+x,90+y);
 }
 
-
+void pilihan(){
+	int x, y;
+	readimagefile("assets//img//inGame//backgroundplay.jpeg",fullscreen);
+	x= 150;
+   	y= 50;
+	readimagefile("assets//img//inGame//menulevel//level1.jpg",x,y,450+x,300+y);
+	x= 700;
+	y= 50;
+	readimagefile("assets//img//inGame//menulevel//level2.jpg",x,y,450+x,300+y);
+	x= 150;
+	y= 380;
+	readimagefile("assets//img//inGame//menulevel//level3.jpg",x,y,450+x,300+y);
+	x= 700;
+	y= 380;
+	readimagefile("assets//img//inGame//menulevel//level4.jpg",x,y,450+x,300+y);
+	x=35;
+	y=652;
+    readimagefile("assets//img//inGame//aboutUs//back.gif",x,y,90+x,90+y);
+}
