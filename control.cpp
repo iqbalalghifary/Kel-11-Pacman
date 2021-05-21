@@ -317,10 +317,10 @@ void leaderboard(){
 //			outtextxy(320, tinggi, view);
 		
 			sprintf(view,"%s", p.name);
-			outtextxy(450, tinggi, view);
+			outtextxy(410, tinggi, view);
 	
 			sprintf(view,"%d", 	p.point);
-			outtextxy(770, tinggi, view);
+			outtextxy(795, tinggi, view);
 			tinggi += 40;
 			n++;
 		}
