@@ -266,7 +266,7 @@ void next_level(){
 }
 
 void die(){
-	if(A[i][j]==9){
+	if(A[i+1][j]==9){
 		gameover_screen(scoree.point, scoree.duration.hours, scoree.duration.minute, scoree.duration.second);
 	}
 }
