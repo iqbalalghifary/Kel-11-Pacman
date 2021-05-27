@@ -7,6 +7,7 @@
 #include<time.h>
 #include<windows.h>
 #include<process.h>
+#include<stdlib.h>
 
 
 #include"control.h"

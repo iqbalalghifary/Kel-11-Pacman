@@ -2,6 +2,7 @@
 
 int A[BRS][KLM];
 int i=1,j,e,temp,k,temp2;
+int rowLocation, colLocation;
 void *map;
 unsigned long size;
 typedef struct{
@@ -59,8 +60,8 @@ void limit(){
    }else {
    	    atas = false;
    }
-   
-	
+
+
 	if((j<=0) || (A[i+1][j]==1) || (A[i+1][j]==1)){
 		bawah = false;
 	}else if((j<=0) || (A[i+1][j]==3) || (A[i+1][j]==3)){
@@ -109,7 +110,6 @@ void move(bool up, bool down, bool left, bool right){
 				}else{
 					k=0;
 				}
-
 			}
 			break;
 		case KEY_LEFT	:
@@ -222,13 +222,23 @@ void tempp(){
 	}
 }
 
+void pacmanLocation(){
+	rowLocation = i;
+	colLocation = j;
+}
+
+void returnPacman(){
+	i = rowLocation;
+	j = colLocation;
+}
+
 void movement(int l){
-	A[i][j]=2;
-	if(A[i][j]==2){
+//	A[i][j]=2;
+//	if(A[i][j]==2){
 		ceksprite(k, i, j);
-		e=getch();
+		getch();
 		A[i][j]=temp;
-	}
+//	}
 	tempMaps(temp, i, j);
 }
 
@@ -315,7 +325,6 @@ void leaderboard(){
 			settextstyle(2, 0, 8);
 //			sprintf(view,"%i",n);
 //			outtextxy(320, tinggi, view);
-		
 			sprintf(view,"%s", p.name);
 			outtextxy(450, tinggi, view);
 	
@@ -372,6 +381,40 @@ void timers(clock_t dur_h, clock_t dur_m,clock_t dur_s){
 	scoree.duration.second=dur_s;
 }
 
+void ghost(){
+	bool check_p;
+	int direction;
+	for(i=0;i<BRS;i++){
+		for(j=0;j<KLM;j++){
+			if(A[i][j] == 9){
+				boom(i,j);
+				A[i][j]=temp;
+				tempMaps(temp,i,j);
+				int x = rand() % 4 + 1;
+				switch(x){
+					case 1:
+						A[i+1][j]=9;
+						i++;
+						break;
+					case 2:
+						A[i-1][j]=9;
+						i--;
+						break;
+					case 3:
+						A[i][j+1]=9;
+						j++;
+						break;
+					case 4:
+						A[i][j-1]=9;
+						j--;
+						break;
+				}
+				boom(i,j);
+			}
+		}
+	}
+}
+
 void menu_utama(){
 	int x, y, ltemp;
 	int p=1;
@@ -394,15 +437,19 @@ void menu_utama(){
 					level(lv);
 					ltemp = lv;
 					maping();
+					pacmanLocation();
 					if(lv==1){
 					timer_start();	
 					}
 					while(lv>=1){
 						pointt();
-						tempp();
+						//tempp();
+						returnPacman();
 						movement(lv);
 						limit();
 						lv=num_level(lv);
+						pacmanLocation();
+						ghost();
 						die();
 						timer_end();
 					}

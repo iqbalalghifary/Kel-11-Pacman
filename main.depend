@@ -90,3 +90,51 @@
 	"score.h"
 	"sound_track.h"
 
+1621868752 source:d:\polban\semester 2\proyek\aa\kel-11-pacman\control.cpp
+	"header/pacman.h"
+
+1621765884 d:\polban\semester 2\proyek\aa\kel-11-pacman\header\pacman.h
+	<stdio.h>
+	<graphics.h>
+	<stdbool.h>
+	<time.h>
+	<windows.h>
+	<process.h>
+	<stdlib.h>
+	"control.h"
+	"game_over.h"
+	"main_menu.h"
+	"maps.h"
+	"score.h"
+	"sound_track.h"
+
+1621757232 d:\polban\semester 2\proyek\aa\kel-11-pacman\header\control.h
+
+1621715767 d:\polban\semester 2\proyek\aa\kel-11-pacman\header\game_over.h
+
+1621715767 d:\polban\semester 2\proyek\aa\kel-11-pacman\header\main_menu.h
+
+1621715767 d:\polban\semester 2\proyek\aa\kel-11-pacman\header\maps.h
+
+1621715767 d:\polban\semester 2\proyek\aa\kel-11-pacman\header\score.h
+
+1621715767 d:\polban\semester 2\proyek\aa\kel-11-pacman\header\sound_track.h
+
+1621715767 source:d:\polban\semester 2\proyek\aa\kel-11-pacman\game_over.cpp
+	"header/pacman.h"
+
+1621715767 source:d:\polban\semester 2\proyek\aa\kel-11-pacman\main.cpp
+	"header/pacman.h"
+
+1621715767 source:d:\polban\semester 2\proyek\aa\kel-11-pacman\main_menu.cpp
+	"header/pacman.h"
+
+1621766322 source:d:\polban\semester 2\proyek\aa\kel-11-pacman\maps.cpp
+	"header/pacman.h"
+
+1621715767 source:d:\polban\semester 2\proyek\aa\kel-11-pacman\score.cpp
+	"header/pacman.h"
+
+1621715767 source:d:\polban\semester 2\proyek\aa\kel-11-pacman\sound_track.cpp
+	"header/pacman.h"
+

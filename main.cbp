@@ -23,13 +23,18 @@
 		</Linker>
 		<Unit filename="control.cpp" />
 		<Unit filename="game_over.cpp" />
+		<Unit filename="header/control.h" />
+		<Unit filename="header/game_over.h" />
+		<Unit filename="header/main_menu.h" />
+		<Unit filename="header/maps.h" />
+		<Unit filename="header/pacman.h" />
+		<Unit filename="header/score.h" />
+		<Unit filename="header/sound_track.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="main_menu.cpp" />
 		<Unit filename="maps.cpp" />
 		<Unit filename="score.cpp" />
 		<Unit filename="sound_track.cpp" />
-		<Extensions>
-			<lib_finder disable_auto="1" />
-		</Extensions>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
