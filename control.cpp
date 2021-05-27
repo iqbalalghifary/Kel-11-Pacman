@@ -394,19 +394,26 @@ void ghost(){
 				switch(x){
 					case 1:
 						A[i+1][j]=9;
+						
 						i++;
 						break;
 					case 2:
 						A[i-1][j]=9;
+					
+						
 						i--;
 						break;
 					case 3:
 						A[i][j+1]=9;
-						j++;
+					j++;
+						
+						
 						break;
 					case 4:
 						A[i][j-1]=9;
-						j--;
+					j--;
+					
+					
 						break;
 				}
 				boom(i,j);
@@ -443,7 +450,6 @@ void menu_utama(){
 					}
 					while(lv>=1){
 						pointt();
-						//tempp();
 						returnPacman();
 						movement(lv);
 						limit();
@@ -470,7 +476,6 @@ void menu_utama(){
 					}
 					while(lv>=2){
 					pointt();
-						tempp();
 						movement(lv);
 						limit();
 						lv=num_level(lv);
@@ -503,7 +508,6 @@ void menu_utama(){
 					}
 					while(lv>=3){
 					pointt();
-						tempp();
 						movement(lv);
 						limit();
 						lv=num_level(lv);
@@ -529,7 +533,6 @@ void menu_utama(){
 					}
 					while(lv==4){
 					pointt();
-						tempp();
 						movement(lv);
 						limit();
 						lv=num_level(lv);
