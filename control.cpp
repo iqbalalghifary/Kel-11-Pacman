@@ -233,12 +233,9 @@ void returnPacman(){
 }
 
 void movement(int l){
-//	A[i][j]=2;
-//	if(A[i][j]==2){
 		ceksprite(k, i, j);
 		getch();
 		A[i][j]=temp;
-//	}
 	tempMaps(temp, i, j);
 }
 
@@ -323,8 +320,6 @@ void leaderboard(){
 		rewind(fp);
 		while (fread(&p, sizeof(sc), 1, fp) == 1 && n <= 5){
 			settextstyle(2, 0, 8);
-//			sprintf(view,"%i",n);
-//			outtextxy(320, tinggi, view);
 			sprintf(view,"%s", p.name);
 			outtextxy(450, tinggi, view);
 	
@@ -381,9 +376,8 @@ void timers(clock_t dur_h, clock_t dur_m,clock_t dur_s){
 	scoree.duration.second=dur_s;
 }
 
-void ghost(){
+void moveghost(bool atas, bool bawah, bool kiri, bool kanan){
 	bool check_p;
-	int direction;
 	for(i=0;i<BRS;i++){
 		for(j=0;j<KLM;j++){
 			if(A[i][j] == 9){
@@ -394,25 +388,26 @@ void ghost(){
 				switch(x){
 					case 1:
 						A[i+1][j]=9;
-						
-						i++;
+						if (bawah=true){	
+						i++;}
 						break;
 					case 2:
 						A[i-1][j]=9;
-					
-						
-						i--;
+						if(atas=true){	
+						i--;}
 						break;
 					case 3:
 						A[i][j+1]=9;
-					j++;
-						
+						if(kanan=true){
+						j++;
+						}
 						
 						break;
 					case 4:
 						A[i][j-1]=9;
-					j--;
-					
+						if(kiri=true){	
+						j--;
+						}
 					
 						break;
 				}
@@ -422,7 +417,61 @@ void ghost(){
 	}
 }
 
+void limitghost(){
+	bool kiri, kanan, atas, bawah;
+
+if(A[i-1][j]==0 || A[i-1][j]==3 || A[i-1][j]==5 || A[i-1][j]==7){
+		atas = true;
+		k=0;
+	}else if(A[i][j]==0 && ( A[i][j-1]==1 || A[i][j+1]==1)){
+		atas = false;
+		k=0;
+	}else if((i<=0)||(A[i+1][j]==1)){
+		atas = false;
+	}else if(A[i][j]==0 && A[i-1][j]==1 && ( A[i][j-1]==0 || A[i][j+1]==0)){
+		atas = false;
+		k=0;
+		
+   }else if(A[i][j]==0 && ( A[i][j-1]==3 || A[i][j+1]==3)){
+		atas = false;
+		k=0;
+	}else if((i<=0)||(A[i+1][j]==3)){
+		atas = false;
+	}else if(A[i][j]==0 && A[i-1][j]==3 && ( A[i][j-1]==0 || A[i][j+1]==0)){
+		atas = false;
+		k=0;
+   }else {
+   	    atas = false;
+   }
+
+
+	if((j<=5) || (A[i+1][j]==0) || (A[i+1][j]==0)){
+		bawah = false;
+	}else if((j<=5) || (A[i+1][j]==7) || (A[i+1][j]==7)){
+		bawah = false;
+	}else{
+		bawah = true;
+	}
+
+	if((j<=5) || (A[i][j-1]==0) || (A[i][j-1]==0)){
+		kiri = false;
+	}else if((j<=5) || (A[i][j-1]==7) || (A[i][j-1]==7)){
+		kiri = false;
+	}else{
+		kiri = true;
+	}
+
+	if((j>=31)||(A[i][j+1]==0) || (A[i][j+1]==0)){
+		kanan = false;
+	}else if((j>=31)||(A[i][j+1]==7) || (A[i][j+1]==7)){
+		kanan = false;
+	}else{
+		kanan = true;
+	}
+	moveghost(atas,bawah,kiri,kanan);
+}
 void menu_utama(){
+	bool kiri, kanan, atas, bawah;
 	int x, y, ltemp;
 	int p=1;
     soundmenu();
@@ -455,7 +504,7 @@ void menu_utama(){
 						limit();
 						lv=num_level(lv);
 						pacmanLocation();
-						ghost();
+					    limitghost();
 						die();
 						timer_end();
 					}
@@ -476,6 +525,7 @@ void menu_utama(){
 					}
 					while(lv>=2){
 					pointt();
+						tempp();
 						movement(lv);
 						limit();
 						lv=num_level(lv);
@@ -508,6 +558,7 @@ void menu_utama(){
 					}
 					while(lv>=3){
 					pointt();
+						tempp();
 						movement(lv);
 						limit();
 						lv=num_level(lv);
@@ -533,6 +584,7 @@ void menu_utama(){
 					}
 					while(lv==4){
 					pointt();
+						tempp();
 						movement(lv);
 						limit();
 						lv=num_level(lv);
