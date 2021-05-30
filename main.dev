@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=3
 CompilerSettings=0000000100000000000000000
-UnitCount=16
+UnitCount=15
 
 [VersionInfo]
 Major=1
@@ -190,17 +190,17 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit15]
-FileName=ghost.cpp
+[Unit16]
+FileName=header\ghost.h
 CompileCpp=1
-Folder=Driver
+Folder=Header
 Compile=1
 Link=1
 Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit16]
+[Unit15]
 FileName=header\ghost.h
 CompileCpp=1
 Folder=Header
