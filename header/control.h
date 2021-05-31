@@ -18,3 +18,4 @@ void menu_utama();
 void timers(clock_t dur_h, clock_t dur_m,clock_t dur_s);
 void pilihan();
 void limitghost();
+void mapingghost();

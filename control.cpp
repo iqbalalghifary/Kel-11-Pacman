@@ -254,7 +254,7 @@ void maping(){
 		}
 	}
 	i=15;
-	j=0;
+	j=1;
 }
 
 void next_level(){
@@ -376,51 +376,52 @@ void timers(clock_t dur_h, clock_t dur_m,clock_t dur_s){
 	scoree.duration.second=dur_s;
 }
 
-void moveghost(bool atas, bool bawah, bool kiri, bool kanan){
-	bool check_p;
-	for(i=0;i<BRS;i++){
-		for(j=0;j<KLM;j++){
-			if(A[i][j] == 9){
-				boom(i,j);
-				A[i][j]=temp;
-				tempMaps(temp,i,j);
-				int x = rand() % 4 + 1;
-				switch(x){
-					case 1:
-						A[i+1][j]=9;
-						if (bawah=true){	
-						i++;}
-						break;
-					case 2:
-						A[i-1][j]=9;
-						if(atas=true){	
-						i--;}
-						break;
-					case 3:
-						A[i][j+1]=9;
-						if(kanan=true){
-						j++;
-						}
-						
-						break;
-					case 4:
-						A[i][j-1]=9;
-						if(kiri=true){	
-						j--;
-						}
-					
-						break;
-				}
-				boom(i,j);
-			}
-		}
-	}
+
+void moveghost(bool atas, bool bawah, bool kiri, bool kanan){	
+bool check_p;
+  int direction;
+  for(i=0;i<BRS;i++){
+    for(j=0;j<KLM;j++){
+      if(A[i][j] == 9){
+        boom(i,j);
+        A[i][j]=temp;
+        tempMaps(temp,i,j);
+        int x = rand() % 4 + 1;
+        switch(x){
+          case 1:
+            A[i+1][j]=9;
+
+            i++;
+            break;
+          case 2:
+            A[i-1][j]=9;
+
+
+            i--;
+            break;
+          case 3:
+            A[i][j+1]=9;
+          j++;
+
+
+            break;
+          case 4:
+            A[i][j-1]=9;
+          j--;
+
+
+            break;
+        }
+        boom(i,j);
+      }
+    }
+  }
 }
 
 void limitghost(){
 	bool kiri, kanan, atas, bawah;
 
-if(A[i-1][j]==0 || A[i-1][j]==3 || A[i-1][j]==5 || A[i-1][j]==7){
+	if(A[i-1][j]==0 || A[i-1][j]==3 || A[i-1][j]==5 || A[i-1][j]==7){
 		atas = true;
 		k=0;
 	}else if(A[i][j]==0 && ( A[i][j-1]==1 || A[i][j+1]==1)){
@@ -470,6 +471,7 @@ if(A[i-1][j]==0 || A[i-1][j]==3 || A[i-1][j]==5 || A[i-1][j]==7){
 	}
 	moveghost(atas,bawah,kiri,kanan);
 }
+
 void menu_utama(){
 	bool kiri, kanan, atas, bawah;
 	int x, y, ltemp;
@@ -503,8 +505,8 @@ void menu_utama(){
 						movement(lv);
 						limit();
 						lv=num_level(lv);
+						limitghost();
 						pacmanLocation();
-					    limitghost();
 						die();
 						timer_end();
 					}
