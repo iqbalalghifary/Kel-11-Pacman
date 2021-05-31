@@ -1,4 +1,4 @@
-void ghost(bool atas, bool bawah,bool kiri,bool kanan);
+void moveghost(bool atas, bool bawah,bool kiri,bool kanan);
 void level(int l);
 void tempMaps(int temp, int baris, int kolom);
 void move(bool atas, bool bawah, bool kiri, bool kanan);
@@ -18,3 +18,4 @@ void menu_utama();
 void timers(clock_t dur_h, clock_t dur_m,clock_t dur_s);
 void pilihan();
 void limitghost();
+void mapingghost();
