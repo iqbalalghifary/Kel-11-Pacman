@@ -250,7 +250,7 @@ void maping(){
 	getimage(fullscreen,map);
 	for(i=0;i<BRS;i++){
 		for(j=0;j<KLM;j++){
-			diamond(A[i][j],i,j);
+			egg(A[i][j],i,j);
 		}
 	}
 	i=15;
@@ -383,7 +383,7 @@ bool check_p;
   for(i=0;i<BRS;i++){
     for(j=0;j<KLM;j++){
       if(A[i][j] == 9){
-        boom(i,j);
+        ghost(i,j);
         A[i][j]=temp;
         tempMaps(temp,i,j);
         int x = rand() % 4 + 1;
@@ -413,7 +413,7 @@ bool check_p;
 
             break;
         }
-        boom(i,j);
+        ghost(i,j);
       }
     }
   }
