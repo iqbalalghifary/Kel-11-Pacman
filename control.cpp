@@ -48,7 +48,7 @@ void limit(){
 	}else if(A[i][j]==0 && A[i-1][j]==1 && ( A[i][j-1]==0 || A[i][j+1]==0)){
 		atas = false;
 		k=0;
-
+		
    }else if(A[i][j]==0 && ( A[i][j-1]==3 || A[i][j+1]==3)){
 		atas = false;
 		k=0;
@@ -146,7 +146,7 @@ void ceksprite(int sprite, int baris, int kolom){
        else if(temp == 0 && temp2 == 0 &&  A[i-1][j]!=0){
 		 	readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 			delay(150);
-			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
+			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);	
 		}
 		else if(temp == 0 && (A[i+1][j]==0 || A[i-1][j]==0)){
 			naik(baris, kolom, 1);
@@ -250,7 +250,7 @@ void maping(){
 	getimage(fullscreen,map);
 	for(i=0;i<BRS;i++){
 		for(j=0;j<KLM;j++){
-			egg(A[i][j],i,j);
+			diamond(A[i][j],i,j);
 		}
 	}
 	i=15;
@@ -271,6 +271,8 @@ void next_level(){
 	if(i==20 && (j==1 || j==3)){
 	}
 }
+
+
 
 void die(){
 	if(A[i][j]==9){
@@ -321,10 +323,10 @@ void leaderboard(){
 		while (fread(&p, sizeof(sc), 1, fp) == 1 && n <= 5){
 			settextstyle(2, 0, 8);
 			sprintf(view,"%s", p.name);
-			outtextxy(410, tinggi, view);
-
+			outtextxy(450, tinggi, view);
+	
 			sprintf(view,"%d", 	p.point);
-			outtextxy(795, tinggi, view);
+			outtextxy(770, tinggi, view);
 			tinggi += 40;
 			n++;
 		}
@@ -377,21 +379,11 @@ void timers(clock_t dur_h, clock_t dur_m,clock_t dur_s){
 }
 
 
-<<<<<<< HEAD
 void moveghost(bool atas, bool bawah, bool kiri, bool kanan){
-=======
-void moveghost(bool atas, bool bawah, bool kiri, bool kanan){	
->>>>>>> e4695479e9401bc0c683c0df63c32ce44b13696f
-bool check_p;
-  int direction;
   for(i=0;i<BRS;i++){
     for(j=0;j<KLM;j++){
       if(A[i][j] == 9){
-<<<<<<< HEAD
-        ghost(i,j);
-=======
         boom(i,j);
->>>>>>> e4695479e9401bc0c683c0df63c32ce44b13696f
         A[i][j]=temp;
         tempMaps(temp,i,j);
         int x = rand() % 4 + 1;
@@ -399,114 +391,153 @@ bool check_p;
           case 1:
           	if (bawah==1)
             A[i+1][j]=9;
-
             i++;
             break;
           case 2:
+          	if (atas==1)
             A[i-1][j]=9;
-
-
             i--;
             break;
           case 3:
-            A[i][j+1]=9;
-          j++;
-
-
+          	if (kiri==1)
+            A[i][j-1]=9;
+			j--;
             break;
           case 4:
-            A[i][j-1]=9;
-          j--;
-
-
+          	if (kanan==1)
+            A[i][j+1]=9;
+			j++;
             break;
         }
-<<<<<<< HEAD
-        ghost(i,j);
-=======
         boom(i,j);
->>>>>>> e4695479e9401bc0c683c0df63c32ce44b13696f
       }
     }
   }
 }
 
-void limitghost(){
-	bool kiri, kanan, atas, bawah;
+void limitghost(bool *atas, bool *bawah, bool *kiri, bool *kanan){
 
 	if(A[i-1][j]==0 || A[i-1][j]==3 || A[i-1][j]==5 || A[i-1][j]==7){
-		atas = true;
-		k=0;
-	}else if(A[i][j]==0 && ( A[i][j-1]==1 || A[i][j+1]==1)){
-		atas = false;
-		k=0;
-	}else if((i<=0)||(A[i+1][j]==1)){
-		atas = false;
-	}else if(A[i][j]==0 && A[i-1][j]==1 && ( A[i][j-1]==0 || A[i][j+1]==0)){
-		atas = false;
-		k=0;
-<<<<<<< HEAD
-
-=======
-		
->>>>>>> e4695479e9401bc0c683c0df63c32ce44b13696f
-   }else if(A[i][j]==0 && ( A[i][j-1]==3 || A[i][j+1]==3)){
-		atas = false;
-		k=0;
-	}else if((i<=0)||(A[i+1][j]==3)){
-		atas = false;
-	}else if(A[i][j]==0 && A[i-1][j]==3 && ( A[i][j-1]==0 || A[i][j+1]==0)){
-		atas = false;
-		k=0;
-   }else {
-   	    atas = false;
-   }
-
-
-	if((j<=5) || (A[i+1][j]==0) || (A[i+1][j]==0)){
-		bawah = false;
-	}else if((j<=5) || (A[i+1][j]==7) || (A[i+1][j]==7)){
-		bawah = false;
-	}else{
-		bawah = true;
-<<<<<<< HEAD
+		*atas = true;
+	} else{
+		*atas = false;
 	}
+	if(A[i+1][j]==0 || A[i+1][j]==3 || A[i+1][j]==5 || A[i+1][j]==7){
+		*bawah = true;
+	} else{
+		*bawah = false;
+	}
+	if(A[i][j-1]==0 || A[i][j-1]==3 || A[i][j-1]==5 || A[i][j-1]==7){
+		*kiri = true;
+	} else{
+		*kiri = false;
+	}
+	if(A[i][j+1]==0 || A[i][j+1]==3 || A[i][j+1]==5 || A[i][j+1]==7){
+		*kanan = true;
+	} else{
+		*kanan = false;
+	}
+}
 
-	if((j<=5) || (A[i][j-1]==0) || (A[i][j-1]==0)){
-		kiri = false;
-	}else if((j<=5) || (A[i][j-1]==7) || (A[i][j-1]==7)){
-		kiri = false;
-	}else{
-		kiri = true;
+void ghost(){
+	bool atas, bawah, kiri, kanan;
+	for(i=0; i<BRS; i++){
+		for(j=0; j<KLM; j++){
+			if(A[i][j] == 9){
+				boom(i, j);
+				A[i][j]=temp;
+				tempMaps(temp, i, j);
+				limitghost(&atas, &bawah, &kiri, &kanan);
+				int x = rand() % 4 + 1;
+				switch(x){
+					case 1:
+						if(kanan){
+							A[i][j+1]=9;
+							j++;
+						} else if(atas){
+							A[i-1][j]=9;
+							i--;
+						} else if(kiri){
+							A[i][j-1]=9;
+							j--;
+						} else if(bawah){
+							A[i+1][j]=9;
+							i++;
+						} else{
+							break;
+						}
+						break;
+					case 2:
+						if(atas){
+							A[i-1][j]=9;
+							i--;
+						} else if(bawah){
+							A[i+1][j]=9;
+							i++;
+						} else if(kiri){
+							A[i][j-1]=9;
+							j--;
+						} else if(kanan){
+							A[i][j+1]=9;
+							j++;
+						} else{
+							break;
+						}
+						break;
+					case 3:
+						if(kiri){
+							A[i][j-1]=9;
+							j--;
+						} else if(kanan){
+							A[i][j+1]=9;
+							j++;
+						} else if(atas){
+							A[i-1][j]=9;
+							i--;
+						} else if(bawah){
+							A[i+1][j]=9;
+							i++;
+						} else{
+							break;
+						}
+						break;
+					case 4:
+						if(bawah){
+							A[i+1][j]=9;
+							i++;
+						} else if(kanan){
+							A[i][j+1]=9;
+							j++;
+						} else if(kiri){
+							A[i][j-1]=9;
+							j--;
+						} else if(atas){
+							A[i-1][j]=9;
+							i--;
+						}
+						break;
+				
+				
+//				if(kanan){
+//					A[i][j+1]=9;
+//					j++;
+//				} else if(atas){
+//					A[i-1][j]=9;
+//					i--;
+//				} else if(kiri){
+//					A[i][j-1]=9;
+//					j--;
+//				} else if(bawah){
+//					A[i+1][j]=9;
+//					i++;
+//				} else{
+//					break;
+//				}
+				}
+				boom(i, j);
+			}
+		}
 	}
-
-	if((j>=31)||(A[i][j+1]==0) || (A[i][j+1]==0)){
-		kanan = false;
-	}else if((j>=31)||(A[i][j+1]==7) || (A[i][j+1]==7)){
-		kanan = false;
-	}else{
-		kanan = true;
-	}
-=======
-	}
-
-	if((j<=5) || (A[i][j-1]==0) || (A[i][j-1]==0)){
-		kiri = false;
-	}else if((j<=5) || (A[i][j-1]==7) || (A[i][j-1]==7)){
-		kiri = false;
-	}else{
-		kiri = true;
-	}
-
-	if((j>=31)||(A[i][j+1]==0) || (A[i][j+1]==0)){
-		kanan = false;
-	}else if((j>=31)||(A[i][j+1]==7) || (A[i][j+1]==7)){
-		kanan = false;
-	}else{
-		kanan = true;
-	}
->>>>>>> e4695479e9401bc0c683c0df63c32ce44b13696f
-	moveghost(atas,bawah,kiri,kanan);
 }
 
 void menu_utama(){
@@ -534,7 +565,7 @@ void menu_utama(){
 					maping();
 					pacmanLocation();
 					if(lv==1){
-					timer_start();
+					timer_start();	
 					}
 					while(lv>=1){
 						pointt();
@@ -542,8 +573,8 @@ void menu_utama(){
 						movement(lv);
 						limit();
 						lv=num_level(lv);
-						limitghost();
 						pacmanLocation();
+						ghost();
 						die();
 						timer_end();
 					}
@@ -560,7 +591,7 @@ void menu_utama(){
 					ltemp = lv;
 					maping();
 					if(lv==2){
-					timer_start();
+					timer_start();	
 					}
 					while(lv>=2){
 					pointt();
@@ -593,7 +624,7 @@ void menu_utama(){
 					ltemp = lv;
 					maping();
 					if(lv==3){
-					timer_start();
+					timer_start();	
 					}
 					while(lv>=3){
 					pointt();
@@ -619,7 +650,7 @@ void menu_utama(){
 					ltemp = lv;
 					maping();
 					if(lv==4){
-					timer_start();
+					timer_start();	
 					}
 					while(lv==4){
 					pointt();
