@@ -1,8 +1,13 @@
 #include"header/pacman.h"
 
+
+
 int score(int mat, int brs, int klm, int p){
 	if (mat==5){
 		p++;
+	}
+	if (mat==2){
+        p=p+5;
 	}
 	return p;
 }
@@ -20,6 +25,8 @@ void winner_view(int l){
 	delay(2000);
 }
 
+
+
 void view_leaderboard()
 {
 	int x,y;
@@ -28,7 +35,7 @@ void view_leaderboard()
 
 	x=100;
 	y=120;
-	readimagefile("assets//img//inGame//highscore//nama_score.gif",x,y,800+x,600+y);
+	readimagefile("assets//img//inGame//highscore//nama_skor.gif",x,y,800+x,600+y);
 
 	x=410;
 	y=120;

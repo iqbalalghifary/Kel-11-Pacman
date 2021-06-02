@@ -4,22 +4,22 @@ int maps_level(int l, int a, int b){
 	if(l==1){
 		int B[BRS][KLM] = {
         {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-		{1, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 5, 0, 5, 0, 5, 0, 5, 0, 1},
-		{1, 0, 1, 1, 1, 5, 1, 1, 1, 1, 1, 5, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 5, 1},
+		{1, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 2, 0, 5, 0, 5, 2, 0, 5, 0, 5, 0, 5, 0, 1},
+		{1, 0, 1, 1, 1, 5, 1, 1, 1, 1, 1, 5, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 2, 1},
 		{1, 5, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 5, 1, 1, 5, 1, 1, 1, 1, 0, 1},
-		{1, 0, 1, 0, 1, 5, 1, 1, 1, 1, 1, 5, 0, 0, 5, 0, 5, 0, 5, 0, 5, 1, 1, 1, 5, 0, 5, 0, 5, 0, 5, 1},
+		{1, 0, 1, 0, 1, 2, 1, 1, 1, 1, 1, 5, 0, 0, 5, 0, 5, 0, 5, 0, 5, 1, 1, 1, 5, 0, 5, 0, 5, 0, 5, 1},
 		{1, 9, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 5, 0, 5, 0, 1, 0, 1, 1, 1, 0, 1},
-		{1, 0, 1, 0, 1, 5, 1, 1, 1, 1, 1, 5, 0, 5, 0, 5, 0, 5, 0, 1, 5, 1, 1, 1, 0, 1, 5, 0, 5, 1, 5, 1},
+		{1, 0, 1, 0, 1, 5, 1, 1, 1, 1, 1, 5, 0, 5, 0, 2, 0, 5, 0, 1, 5, 1, 1, 1, 0, 1, 5, 0, 5, 1, 5, 1},
 		{1, 5, 1, 0, 1, 0, 1, 0, 5, 0, 5, 0, 1, 1, 1, 7, 7, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1},
-		{1, 0, 1, 1, 1, 5, 1, 1, 1, 1, 1, 5, 1, 0, 0, 0, 0, 0, 0, 1, 9, 1, 5, 1, 0, 1, 5, 1, 5, 1, 5, 1},
-		{1, 5, 0, 5, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1},
+		{1, 0, 1, 1, 1, 5, 1, 1, 1, 1, 1, 5, 1, 0, 0, 0, 0, 0, 0, 1, 9, 1, 5, 1, 0, 1, 5, 1, 5, 1, 2, 1},
+		{1, 5, 0, 2, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1},
 		{1, 0, 1, 1, 1, 5, 1, 0, 0, 0, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 9, 1},
-		{1, 5, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 5, 0, 5, 0, 5, 0, 5, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1},
+		{1, 5, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 5, 0, 5, 0, 2, 0, 5, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1},
         {1, 0, 1, 5, 1, 5, 1, 0, 0, 0, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 5, 0, 5, 1, 5, 1, 0, 0, 5, 1},
         {1, 5, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 5, 0, 5, 0, 5, 0, 5, 0, 1, 0, 5, 0, 1, 0, 1, 1, 1, 0, 1},
-		{1, 0, 5, 0, 0, 5, 0, 5, 0, 5, 0, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 5, 0, 5, 1, 5, 0, 0, 0, 5, 1},
+		{1, 0, 5, 0, 0, 5, 0, 2, 0, 5, 0, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 5, 0, 5, 1, 5, 0, 0, 0, 5, 1},
 		{1, 5, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 5, 9, 5, 0, 5, 0, 1, 0, 1, 0, 5, 0, 1, 0, 1, 1, 1, 0, 1},
-        {1, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 1},
+        {1, 0, 5, 0, 5, 0, 2, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 2, 0, 5, 0, 5, 1},
 		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 		};
 		return B[a][b];
@@ -94,33 +94,36 @@ int maps_level(int l, int a, int b){
 
 void maps(int mat, int baris, int kolom){
 	if(mat==0){
-		black(baris, kolom);
+		bg(baris, kolom);
 	}
 	if(mat==1){
-		block(baris, kolom);
+		wall(baris, kolom);
 	}
 	if(mat==5){
-		diamond(baris, kolom);
-	}	
+		egg(baris, kolom);
+	}
 	if(mat==9){
-		 boom(baris, kolom);
+		 ghost(baris, kolom);
 	}
 	if(mat==7){
 		door(baris, kolom);
 	}
 	if(mat==3){
-		block2(baris, kolom);
+		wall2(baris, kolom);
+	}
+	if(mat==2){
+		gift(baris, kolom);
 	}
 }
 
-void diamond(int mat, int baris, int kolom){
+void egg(int mat, int baris, int kolom){
 	if(mat==5){
-		diamond(baris, kolom);
+		egg(baris, kolom);
 	}
 }
-void boom(int mat, int baris, int kolom){
+void ghost(int mat, int baris, int kolom){
 	if(mat==9){
-		 boom(baris, kolom);
+		 ghost(baris, kolom);
 	}
 }
 void door(int mat, int baris, int kolom){
@@ -128,30 +131,39 @@ void door(int mat, int baris, int kolom){
 		door(baris, kolom);
 	}
 }
-void block2(int mat, int baris, int kolom){
+void wall2(int mat, int baris, int kolom){
 	if(mat==3){
-		block2(baris, kolom);
+		wall2(baris, kolom);
+	}
+}
+void gift(int mat, int baris, int kolom){
+	if(mat==2){
+		gift(baris, kolom);
 	}
 }
 
-void black(int i, int j){
+void bg(int i, int j){
 	readimagefile("assets//img//inGame//maps//Background.gif", img_mtrx);
 }
-void block(int i, int j){
+void wall(int i, int j){
 	readimagefile("assets//img//inGame//maps//LBWALLS.jpeg", img_mtrx);
 }
-void diamond(int i, int j){
+void egg(int i, int j){
 	readimagefile("assets//img//inGame//maps//telor_maps.jpg", img_mtrx);
 }
-void boom(int i, int j){
+void ghost(int i, int j){
 	readimagefile("assets//img//inGame//maps//ketakutan.jpg", img_mtrx);
 }
 void door(int i, int j){
 	readimagefile("assets//img//inGame//maps//panto.jpeg", img_mtrx);
 }
-void block2(int i, int j){
+void wall2(int i, int j){
 	readimagefile("assets//img//inGame//maps//purple.jpg", img_mtrx);
 }
+void gift(int i, int j){
+	readimagefile("assets//img//inGame//maps//lb_bonus.jpg", img_mtrx);
+}
+
 
 void run(int i, int j, int p){
 	if(p==1){

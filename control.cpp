@@ -27,9 +27,9 @@ void level(int l){
 
 void tempMaps(int temp, int baris, int kolom){
 	if(temp==0){
-		readimagefile("assets//img//inGame//maps//background.gif", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
+		readimagefile("assets//img//inGame//maps//telor_maps.jpg", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
 	}
-	if(temp==1){
+	else if(temp==1){
 		readimagefile("assets//img//inGame//maps//background.gif", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
 	}
 }
@@ -48,7 +48,7 @@ void limit(){
 	}else if(A[i][j]==0 && A[i-1][j]==1 && ( A[i][j-1]==0 || A[i][j+1]==0)){
 		atas = false;
 		k=0;
-		
+
    }else if(A[i][j]==0 && ( A[i][j-1]==3 || A[i][j+1]==3)){
 		atas = false;
 		k=0;
@@ -86,6 +86,7 @@ void limit(){
 		kanan = true;
 	}
 	move(atas,bawah,kiri,kanan);
+
 }
 
 void move(bool up, bool down, bool left, bool right){
@@ -146,7 +147,7 @@ void ceksprite(int sprite, int baris, int kolom){
        else if(temp == 0 && temp2 == 0 &&  A[i-1][j]!=0){
 		 	readimagefile("assets//img//inGame//player//char//karakter1.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 			delay(150);
-			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);	
+			readimagefile("assets//img//inGame//maps//background.gif", (40*j)+20,40*i,(40+40*j)+20,40+40*i);
 		}
 		else if(temp == 0 && (A[i+1][j]==0 || A[i-1][j]==0)){
 			naik(baris, kolom, 1);
@@ -250,7 +251,7 @@ void maping(){
 	getimage(fullscreen,map);
 	for(i=0;i<BRS;i++){
 		for(j=0;j<KLM;j++){
-			diamond(A[i][j],i,j);
+			egg(A[i][j],i,j);
 		}
 	}
 	i=15;
@@ -324,7 +325,7 @@ void leaderboard(){
 			settextstyle(2, 0, 8);
 			sprintf(view,"%s", p.name);
 			outtextxy(450, tinggi, view);
-	
+
 			sprintf(view,"%d", 	p.point);
 			outtextxy(770, tinggi, view);
 			tinggi += 40;
@@ -383,7 +384,7 @@ void moveghost(bool atas, bool bawah, bool kiri, bool kanan){
   for(i=0;i<BRS;i++){
     for(j=0;j<KLM;j++){
       if(A[i][j] == 9){
-        boom(i,j);
+        ghost(i,j);
         A[i][j]=temp;
         tempMaps(temp,i,j);
         int x = rand() % 4 + 1;
@@ -409,7 +410,7 @@ void moveghost(bool atas, bool bawah, bool kiri, bool kanan){
 			j++;
             break;
         }
-        boom(i,j);
+        ghost(i,j);
       }
     }
   }
@@ -444,7 +445,7 @@ void ghost(){
 	for(i=0; i<BRS; i++){
 		for(j=0; j<KLM; j++){
 			if(A[i][j] == 9){
-				boom(i, j);
+				ghost(i, j);
 				A[i][j]=temp;
 				tempMaps(temp, i, j);
 				limitghost(&atas, &bawah, &kiri, &kanan);
@@ -516,8 +517,7 @@ void ghost(){
 							i--;
 						}
 						break;
-				
-				
+
 //				if(kanan){
 //					A[i][j+1]=9;
 //					j++;
@@ -534,7 +534,7 @@ void ghost(){
 //					break;
 //				}
 				}
-				boom(i, j);
+				ghost(i, j);
 			}
 		}
 	}
@@ -565,7 +565,7 @@ void menu_utama(){
 					maping();
 					pacmanLocation();
 					if(lv==1){
-					timer_start();	
+					timer_start();
 					}
 					while(lv>=1){
 						pointt();
@@ -591,7 +591,7 @@ void menu_utama(){
 					ltemp = lv;
 					maping();
 					if(lv==2){
-					timer_start();	
+					timer_start();
 					}
 					while(lv>=2){
 					pointt();
@@ -624,7 +624,7 @@ void menu_utama(){
 					ltemp = lv;
 					maping();
 					if(lv==3){
-					timer_start();	
+					timer_start();
 					}
 					while(lv>=3){
 					pointt();
@@ -650,7 +650,7 @@ void menu_utama(){
 					ltemp = lv;
 					maping();
 					if(lv==4){
-					timer_start();	
+					timer_start();
 					}
 					while(lv==4){
 					pointt();
@@ -704,3 +704,9 @@ void menu_utama(){
 		}
 }
  }
+
+ void timer(clock_t dur_h, clock_t dur_m, clock_t dur_s){
+ scoree.duration.hours=dur_h;
+ scoree.duration.minute=dur_m;
+ scoree.duration.second=dur_s;
+}
