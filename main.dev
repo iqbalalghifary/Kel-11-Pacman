@@ -29,11 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=3
 CompilerSettings=0000000100000000000000000
-<<<<<<< HEAD
-UnitCount=14
-=======
 UnitCount=15
->>>>>>> dd99f5c2d7daa850e8594b544cf7ecc021a9ea34
 
 [VersionInfo]
 Major=1
@@ -195,8 +191,6 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit16]
-<<<<<<< HEAD
-=======
 FileName=header\ghost.h
 CompileCpp=1
 Folder=Header
@@ -207,7 +201,6 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit15]
->>>>>>> dd99f5c2d7daa850e8594b544cf7ecc021a9ea34
 FileName=header\ghost.h
 CompileCpp=1
 Folder=Header
