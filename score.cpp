@@ -1,7 +1,5 @@
 #include"header/pacman.h"
 
-
-
 int score(int mat, int brs, int klm, int p){
 	if (mat==5){
 		p++;

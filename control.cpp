@@ -35,7 +35,6 @@ void tempMapsGhost(int temp, int baris, int kolom){
 
 void limit(){
 	bool kiri, kanan, atas, bawah;
-
 	if(A[i-1][j]==0 || A[i-1][j]==7 || A[i-1][j]==5 || A[i-1][j]==9 ){
 		atas = true;
 		k=0;

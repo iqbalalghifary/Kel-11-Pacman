@@ -138,3 +138,51 @@
 1621715767 source:d:\polban\semester 2\proyek\aa\kel-11-pacman\sound_track.cpp
 	"header/pacman.h"
 
+1623053004 source:f:\score\kel-11-pacman\game_over.cpp
+	"header/pacman.h"
+
+1622101853 f:\score\kel-11-pacman\header\pacman.h
+	<stdio.h>
+	<graphics.h>
+	<stdbool.h>
+	<time.h>
+	<windows.h>
+	<process.h>
+	<stdlib.h>
+	"control.h"
+	"game_over.h"
+	"main_menu.h"
+	"maps.h"
+	"score.h"
+	"sound_track.h"
+
+1623041440 f:\score\kel-11-pacman\header\control.h
+
+1619919590 f:\score\kel-11-pacman\header\game_over.h
+
+1619919590 f:\score\kel-11-pacman\header\main_menu.h
+
+1623041440 f:\score\kel-11-pacman\header\maps.h
+
+1623041440 f:\score\kel-11-pacman\header\score.h
+
+1621586992 f:\score\kel-11-pacman\header\sound_track.h
+
+1623078840 source:f:\score\kel-11-pacman\main.cpp
+	"header/pacman.h"
+
+1623078840 source:f:\score\kel-11-pacman\main_menu.cpp
+	"header/pacman.h"
+
+1623068435 source:f:\score\kel-11-pacman\score.cpp
+	"header/pacman.h"
+
+1621586993 source:f:\score\kel-11-pacman\sound_track.cpp
+	"header/pacman.h"
+
+1623068436 source:f:\score\kel-11-pacman\control.cpp
+	"header/pacman.h"
+
+1623078311 source:f:\score\kel-11-pacman\maps.cpp
+	"header/pacman.h"
+
