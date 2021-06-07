@@ -525,7 +525,7 @@ void menu_utama(){
 	menu_awal();
 	while(1){
 		getmouseclick(WM_LBUTTONDOWN, x, y);
-		if((x>580 && x<580+151)&&(y>310 && y<310+70)){
+		if((x>150 && x<150+450)&&(y>50 && y<50+300)){
 			cleardevice();
 			pilihan();
 			while(1){
