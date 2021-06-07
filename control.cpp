@@ -552,8 +552,6 @@ void menu_utama(){
 						lv=num_level(lv);
 						pacmanLocation();
 						ghost();
-					
-					
 						timer_end();
 					}
 				}
@@ -568,16 +566,19 @@ void menu_utama(){
 					level(lv);
 					ltemp = lv;
 					maping();
+					pacmanLocation();
 					if(lv==2){
 					timer_start();
 					}
 					while(lv>=2){
-					pointt();
-						tempp();
+						returnPacman();	
+						pointt();
+						die();
 						movement(lv);
 						limit();
 						lv=num_level(lv);
-						die();
+						pacmanLocation();
+						ghost();
 						timer_end();
 					}
 			}
@@ -601,16 +602,19 @@ void menu_utama(){
 					level(lv);
 					ltemp = lv;
 					maping();
+					pacmanLocation();
 					if(lv==3){
 					timer_start();
 					}
 					while(lv>=3){
-					pointt();
-						tempp();
+						returnPacman();	
+						pointt();
+						die();
 						movement(lv);
 						limit();
 						lv=num_level(lv);
-						die();
+						pacmanLocation();
+						ghost();
 						timer_end();
 					}
 			}
@@ -627,16 +631,19 @@ void menu_utama(){
 					level(lv);
 					ltemp = lv;
 					maping();
+					pacmanLocation();
 					if(lv==4){
 					timer_start();
 					}
 					while(lv==4){
-					pointt();
-						tempp();
+						returnPacman();	
+						pointt();
+						die();
 						movement(lv);
 						limit();
 						lv=num_level(lv);
-						die();
+						pacmanLocation();
+						ghost();
 						timer_end();
 					}
 			}
