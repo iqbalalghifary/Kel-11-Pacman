@@ -392,22 +392,22 @@ void timers(clock_t dur_h, clock_t dur_m,clock_t dur_s){
 
 void limitghost(bool *atas, bool *bawah, bool *kiri, bool *kanan){
 
-	if(A[i-1][j]==0 || A[i-1][j]==3 || A[i-1][j]==5 || A[i-1][j]==7){
+	if(A[i-1][j]==0 || A[i-1][j]==5 || A[i-1][j]==7){
 		*atas = true;
 	} else{
 		*atas = false;
 	}
-	if(A[i+1][j]==0 || A[i+1][j]==3 || A[i+1][j]==5 || A[i+1][j]==7){
+	if(A[i+1][j]==0 || A[i+1][j]==5 || A[i+1][j]==7){
 		*bawah = true;
 	} else{
 		*bawah = false;
 	}
-	if(A[i][j-1]==0 || A[i][j-1]==3 || A[i][j-1]==5 || A[i][j-1]==7){
+	if(A[i][j-1]==0 || A[i][j-1]==5 || A[i][j-1]==7){
 		*kiri = true;
 	} else{
 		*kiri = false;
 	}
-	if(A[i][j+1]==0 || A[i][j+1]==3 || A[i][j+1]==5 || A[i][j+1]==7){
+	if(A[i][j+1]==0 || A[i][j+1]==5 || A[i][j+1]==7){
 		*kanan = true;
 	} else{
 		*kanan = false;

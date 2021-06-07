@@ -21,13 +21,11 @@ void savescore_screen(int p,clock_t dur_h, clock_t dur_m,clock_t dur_s){
 				if(nama[z] < 65){
 					nama[z] = 90;
 				}
-				outtextxy(600, 150 ,nama);
 			}else if(ax == 72){
 				nama[z]++;
 				if(nama[z] > 90){
 					nama[z] = 65;
 				}
-				outtextxy(600, 150 ,nama);
 			}else if(ax == 77){
 				if(z < 3) z++;
 			}else if(ax == 75){
