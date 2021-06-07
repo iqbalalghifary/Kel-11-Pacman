@@ -26,22 +26,11 @@ void level(int l){
 }
 
 void tempMaps(int temp, int baris, int kolom){
-	//if(temp==0){
 		readimagefile("assets//img//inGame//maps//background.gif", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
-	//}
-	//else if(temp==1){
-		//readimagefile("assets//img//inGame//maps//background.gif", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
-	//}
 }
 
 void tempMapsGhost(int temp, int baris, int kolom){
-	//if(temp==0){
 		readimagefile("assets//img//inGame//maps//telor_maps.jpg", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
-		
-	//}
-	//else if(temp==1){
-		//readimagefile("assets//img//inGame//maps//background.gif", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
-	//}
 }
 
 void limit(){
@@ -283,8 +272,6 @@ void next_level(){
 	if(i==20 && (j==1 || j==3)){
 	}
 }
-
-
 
 void die(){
 	if(A[i][j]==9){
@@ -540,11 +527,11 @@ void menu_utama(){
 					maping();
 					pacmanLocation();
 					if(lv==1){
-					timer_start();	
+					timer_start();
 					}
 					while(lv>=1){
-					
-						returnPacman();	
+
+						returnPacman();
 						pointt();
 						die();
 						movement(lv);
@@ -571,7 +558,7 @@ void menu_utama(){
 					timer_start();
 					}
 					while(lv>=2){
-						returnPacman();	
+						returnPacman();
 						pointt();
 						die();
 						movement(lv);
@@ -607,7 +594,7 @@ void menu_utama(){
 					timer_start();
 					}
 					while(lv>=3){
-						returnPacman();	
+						returnPacman();
 						pointt();
 						die();
 						movement(lv);
@@ -636,7 +623,7 @@ void menu_utama(){
 					timer_start();
 					}
 					while(lv==4){
-						returnPacman();	
+						returnPacman();
 						pointt();
 						die();
 						movement(lv);
