@@ -37,6 +37,7 @@ void tempMaps(int temp, int baris, int kolom){
 void tempMapsGhost(int temp, int baris, int kolom){
 	//if(temp==0){
 		readimagefile("assets//img//inGame//maps//telor_maps.jpg", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
+		
 	//}
 	//else if(temp==1){
 		//readimagefile("assets//img//inGame//maps//background.gif", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
@@ -389,39 +390,6 @@ void timers(clock_t dur_h, clock_t dur_m,clock_t dur_s){
 	scoree.duration.second=dur_s;
 }
 
-
-void moveghost(int temp, int baris, int kolom){
-  for(i=0;i<BRS;i++){
-    for(j=0;j<KLM;j++){
-      if(A[i][j] == 9){
-        ghost(i,j);
-        A[i][j]=temp;
-        tempMaps(temp,i,j);
-        int x = rand() % 4 + 1;
-        switch(x){
-          case 1:
-                A[i+1][j]=7;
-                i++;
-                break;
-            case 2:
-                A[i-1][j]=7;
-                i--;
-                break;
-            case 3:
-                A[i][j+1]=7;
-                j++;
-                break;
-            case 4:
-                A[i][j-1]=7;
-                j--;
-                break;
-                }
-            ghost(i,j);
-      }
-    }
-  }
-}
-
 void limitghost(bool *atas, bool *bawah, bool *kiri, bool *kanan){
 
 	if(A[i-1][j]==0 || A[i-1][j]==3 || A[i-1][j]==5 || A[i-1][j]==7){
@@ -460,15 +428,19 @@ void ghost(){
 				switch(x){
 					case 1:
 						if(kanan){
+							A[i][j]=5;
 							A[i][j+1]=9;
 							j++;
 						} else if(atas){
+							A[i][j]=5;
 							A[i-1][j]=9;
 							i--;
 						} else if(kiri){
+							A[i][j]=5;
 							A[i][j-1]=9;
 							j--;
 						} else if(bawah){
+							A[i][j]=5;
 							A[i+1][j]=9;
 							i++;
 						} else{
@@ -477,15 +449,19 @@ void ghost(){
 						break;
 					case 2:
 						if(atas){
+							A[i][j]=5;
 							A[i-1][j]=9;
 							i--;
 						} else if(bawah){
+							A[i][j]=5;
 							A[i+1][j]=9;
 							i++;
 						} else if(kiri){
+							A[i][j]=5;
 							A[i][j-1]=9;
 							j--;
 						} else if(kanan){
+							A[i][j]=5;
 							A[i][j+1]=9;
 							j++;
 						} else{
@@ -494,15 +470,19 @@ void ghost(){
 						break;
 					case 3:
 						if(kiri){
+							A[i][j]=5;
 							A[i][j-1]=9;
 							j--;
 						} else if(kanan){
+							A[i][j]=5;
 							A[i][j+1]=9;
 							j++;
 						} else if(atas){
+							A[i][j]=5;
 							A[i-1][j]=9;
 							i--;
 						} else if(bawah){
+							A[i][j]=5;
 							A[i+1][j]=9;
 							i++;
 						} else{
@@ -511,35 +491,23 @@ void ghost(){
 						break;
 					case 4:
 						if(bawah){
+							A[i][j]=5;
 							A[i+1][j]=9;
 							i++;
 						} else if(kanan){
+							A[i][j]=5;
 							A[i][j+1]=9;
 							j++;
 						} else if(kiri){
+							A[i][j]=5;
 							A[i][j-1]=9;
 							j--;
 						} else if(atas){
+							A[i][j]=5;
 							A[i-1][j]=9;
 							i--;
 						}
 						break;
-
-//				if(kanan){
-//					A[i][j+1]=9;
-//					j++;
-//				} else if(atas){
-//					A[i-1][j]=9;
-//					i--;
-//				} else if(kiri){
-//					A[i][j-1]=9;
-//					j--;
-//				} else if(bawah){
-//					A[i+1][j]=9;
-//					i++;
-//				} else{
-//					break;
-//				}
 				}
 				ghost(i, j);
 			}
@@ -572,17 +540,20 @@ void menu_utama(){
 					maping();
 					pacmanLocation();
 					if(lv==1){
-					timer_start();
+					timer_start();	
 					}
 					while(lv>=1){
+					
+						returnPacman();	
 						pointt();
-						returnPacman();
+						die();
 						movement(lv);
 						limit();
 						lv=num_level(lv);
 						pacmanLocation();
 						ghost();
-						die();
+					
+					
 						timer_end();
 					}
 				}
