@@ -26,12 +26,21 @@ void level(int l){
 }
 
 void tempMaps(int temp, int baris, int kolom){
-	if(temp==0){
-		readimagefile("assets//img//inGame//maps//telor_maps.jpg", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
-	}
-	else if(temp==1){
+	//if(temp==0){
 		readimagefile("assets//img//inGame//maps//background.gif", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
-	}
+	//}
+	//else if(temp==1){
+		//readimagefile("assets//img//inGame//maps//background.gif", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
+	//}
+}
+
+void tempMapsGhost(int temp, int baris, int kolom){
+	//if(temp==0){
+		readimagefile("assets//img//inGame//maps//telor_maps.jpg", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
+	//}
+	//else if(temp==1){
+		//readimagefile("assets//img//inGame//maps//background.gif", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
+	//}
 }
 
 void limit(){
@@ -238,6 +247,7 @@ void movement(int l){
 		getch();
 		A[i][j]=temp;
 	tempMaps(temp, i, j);
+
 }
 
 void maping(){
@@ -380,7 +390,7 @@ void timers(clock_t dur_h, clock_t dur_m,clock_t dur_s){
 }
 
 
-void moveghost(bool atas, bool bawah, bool kiri, bool kanan){
+void moveghost(int temp, int baris, int kolom){
   for(i=0;i<BRS;i++){
     for(j=0;j<KLM;j++){
       if(A[i][j] == 9){
@@ -390,27 +400,23 @@ void moveghost(bool atas, bool bawah, bool kiri, bool kanan){
         int x = rand() % 4 + 1;
         switch(x){
           case 1:
-          	if (bawah==1)
-            A[i+1][j]=9;
-            i++;
-            break;
-          case 2:
-          	if (atas==1)
-            A[i-1][j]=9;
-            i--;
-            break;
-          case 3:
-          	if (kiri==1)
-            A[i][j-1]=9;
-			j--;
-            break;
-          case 4:
-          	if (kanan==1)
-            A[i][j+1]=9;
-			j++;
-            break;
-        }
-        ghost(i,j);
+                A[i+1][j]=7;
+                i++;
+                break;
+            case 2:
+                A[i-1][j]=7;
+                i--;
+                break;
+            case 3:
+                A[i][j+1]=7;
+                j++;
+                break;
+            case 4:
+                A[i][j-1]=7;
+                j--;
+                break;
+                }
+            ghost(i,j);
       }
     }
   }
@@ -448,6 +454,7 @@ void ghost(){
 				ghost(i, j);
 				A[i][j]=temp;
 				tempMaps(temp, i, j);
+				tempMapsGhost(temp,i,j);
 				limitghost(&atas, &bawah, &kiri, &kanan);
 				int x = rand() % 4 + 1;
 				switch(x){
