@@ -21,11 +21,13 @@ void savescore_screen(int p,clock_t dur_h, clock_t dur_m,clock_t dur_s){
 				if(nama[z] < 65){
 					nama[z] = 90;
 				}
+				//outtextxy(600, 150 ,nama);
 			}else if(ax == 72){
 				nama[z]++;
 				if(nama[z] > 90){
 					nama[z] = 65;
 				}
+				outtextxy(600, 150 ,nama);
 			}else if(ax == 77){
 				if(z < 3) z++;
 			}else if(ax == 75){
@@ -36,7 +38,7 @@ void savescore_screen(int p,clock_t dur_h, clock_t dur_m,clock_t dur_s){
 		view2_time(dur_h,dur_m,dur_s);
 		getmouseclick(WM_LBUTTONDOWN, x, y);
 		if((x>510 && x<580+300)&&(y>520 && y<550+300)){
-			save(nama,p);
+			//save(nama,p);
 			cleardevice();
 			menu_utama();
 		}
