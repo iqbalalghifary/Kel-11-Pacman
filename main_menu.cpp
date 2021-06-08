@@ -17,9 +17,9 @@ void menu_awal(){
 	x= 650;
 	y= 460;
 	readimagefile("assets//img//inGame//cara.jpg",x,y,350+x,230+y);
-	x= 1050;
-	y= 500;
-	readimagefile("assets//img//inGame//exit.gif",x,y,200+x,200+y);
+	x= 1150;
+	y= 620;
+	readimagefile("assets//img//inGame//exit.gif",x,y,80+x,80+y);
 
 }
 

@@ -35,7 +35,7 @@ void tempMapsGhost(int temp, int baris, int kolom){
 
 void limit(){
 	bool kiri, kanan, atas, bawah;
-	if(A[i-1][j]==0 || A[i-1][j]==7 || A[i-1][j]==5 || A[i-1][j]==9 ){
+	if(A[i-1][j]==0 || A[i-1][j]==7 || A[i-1][j]==5 || A[i-1][j]==9 || A[i-1][j]==2 ){
 		atas = true;
 		k=0;
 	}else if(A[i][j]==0 && ( A[i][j-1]==1 || A[i][j+1]==1)){
@@ -662,7 +662,7 @@ void menu_utama(){
 					goto menu;
 				}
 			}
-		}else if((x>1050 && x<1050+200)&&(y>500 && y<500+200)){
+		}else if((x>1150 && x<1150+80)&&(y>620 && y<620+80)){
 			keluar();
 			while(1){
 				getmouseclick(WM_LBUTTONDOWN, x, y);
