@@ -1,28 +1,26 @@
 #include"header/pacman.h"
 void menu_awal(){
 	int x, y;
-   	readimagefile("assets//img//inGame//exit.gif",x,y,80+x,80+y);
-	x=5;
-	y=100;
    	readimagefile("assets//img//opening//pixels-1.jpg",fullscreen);
-	x= 150;
-   	y= 50;
-   	//readimagefile("assets//img//inGame//logo.gif", x,y,700+x,700+y);
-	//x= 580;
-   	//y= 310;
+	x= 260;
+   	y= -250;
+   	readimagefile("assets//img//inGame//logo.gif", x,y,700+x,700+y);
+	x= 200;
+   	y= 210;
+   	readimagefile("assets//img//inGame//a.jpg",x,y,350+x,230+y);
+	x= 200;
+   	y= 460;
+	readimagefile("assets//img//inGame//highscore.jpg",x,y,350+x,230+y);
+	x= 650;
+	y= 210;
+	readimagefile("assets//img//inGame//about us.jpg",x,y,350+x,230+y);
+	x= 650;
+	y= 460;
+	readimagefile("assets//img//inGame//cara.jpg",x,y,350+x,230+y);
+	x= 1050;
+	y= 500;
+	readimagefile("assets//img//inGame//exit.gif",x,y,200+x,200+y);
 
-	readimagefile("assets//img//inGame//a.jpg",x,y,450+x,300+y);
-	x= 700;
-	y= 50;
-	readimagefile("assets//img//inGame//highscore.jpg",x,y,450+x,300+y);
-	x= 150;
-	y= 380;
-	readimagefile("assets//img//inGame//about us.jpg",x,y,450+x,300+y);
-	x= 700;
-	y= 380;
-	readimagefile("assets//img//inGame//cara.jpg",x,y,450+x,300+y);
-	x=35;
-	y=652;
 }
 
 void splashscreen(){

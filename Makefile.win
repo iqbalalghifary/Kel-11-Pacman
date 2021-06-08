@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main_menu.o control.o game_over.o sound_track.o score.o maps.o main.o
-LINKOBJ  = main_menu.o control.o game_over.o sound_track.o score.o maps.o main.o
+OBJ      = main_menu.o control.o sound_track.o score.o maps.o main.o game_over.o
+LINKOBJ  = main_menu.o control.o sound_track.o score.o maps.o main.o game_over.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32 -lwinmm -m32
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -30,9 +30,6 @@ main_menu.o: main_menu.cpp
 control.o: control.cpp
 	$(CPP) -c control.cpp -o control.o $(CXXFLAGS)
 
-game_over.o: game_over.cpp
-	$(CPP) -c game_over.cpp -o game_over.o $(CXXFLAGS)
-
 sound_track.o: sound_track.cpp
 	$(CPP) -c sound_track.cpp -o sound_track.o $(CXXFLAGS)
 
@@ -44,3 +41,6 @@ maps.o: maps.cpp
 
 main.o: main.cpp
 	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+game_over.o: game_over.cpp
+	$(CPP) -c game_over.cpp -o game_over.o $(CXXFLAGS)
