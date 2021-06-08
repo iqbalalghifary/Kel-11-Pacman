@@ -26,16 +26,28 @@ void level(int l){
 }
 
 void tempMaps(int temp, int baris, int kolom){
+	//if(temp==0){
 		readimagefile("assets//img//inGame//maps//background.gif", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
+	//}
+	//else if(temp==1){
+		//readimagefile("assets//img//inGame//maps//background.gif", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
+	//}
 }
 
 void tempMapsGhost(int temp, int baris, int kolom){
+	//if(temp==0){
 		readimagefile("assets//img//inGame//maps//telor_maps.jpg", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
+		
+	//}
+	//else if(temp==1){
+		//readimagefile("assets//img//inGame//maps//background.gif", 40*kolom-1,40*baris,40+40*kolom-1,40+40*baris);
+	//}
 }
 
 void limit(){
 	bool kiri, kanan, atas, bawah;
-	if(A[i-1][j]==0 || A[i-1][j]==7 || A[i-1][j]==5 || A[i-1][j]==9 || A[i-1][j]==2 ){
+
+	if(A[i-1][j]==0 || A[i-1][j]==7 || A[i-1][j]==5 || A[i-1][j]==9 ){
 		atas = true;
 		k=0;
 	}else if(A[i][j]==0 && ( A[i][j-1]==1 || A[i][j+1]==1)){
@@ -272,6 +284,8 @@ void next_level(){
 	}
 }
 
+
+
 void die(){
 	if(A[i][j]==9){
 		gameover_screen(scoree.point, scoree.duration.hours, scoree.duration.minute, scoree.duration.second);
@@ -321,10 +335,10 @@ void leaderboard(){
 		while (fread(&p, sizeof(sc), 1, fp) == 1 && n <= 5){
 			settextstyle(2, 0, 8);
 			sprintf(view,"%s", p.name);
-			outtextxy(410, tinggi, view);
+			outtextxy(450, tinggi, view);
 
 			sprintf(view,"%d", 	p.point);
-			outtextxy(800, tinggi, view);
+			outtextxy(770, tinggi, view);
 			tinggi += 40;
 			n++;
 		}
@@ -378,22 +392,22 @@ void timers(clock_t dur_h, clock_t dur_m,clock_t dur_s){
 
 void limitghost(bool *atas, bool *bawah, bool *kiri, bool *kanan){
 
-	if(A[i-1][j]==0 || A[i-1][j]==5){
+	if(A[i-1][j]==0 || A[i-1][j]==3 || A[i-1][j]==5 || A[i-1][j]==7){
 		*atas = true;
 	} else{
 		*atas = false;
 	}
-	if(A[i+1][j]==0 || A[i+1][j]==5){
+	if(A[i+1][j]==0 || A[i+1][j]==3 || A[i+1][j]==5 || A[i+1][j]==7){
 		*bawah = true;
 	} else{
 		*bawah = false;
 	}
-	if(A[i][j-1]==0 || A[i][j-1]==5){
+	if(A[i][j-1]==0 || A[i][j-1]==3 || A[i][j-1]==5 || A[i][j-1]==7){
 		*kiri = true;
 	} else{
 		*kiri = false;
 	}
-	if(A[i][j+1]==0 || A[i][j+1]==5){
+	if(A[i][j+1]==0 || A[i][j+1]==3 || A[i][j+1]==5 || A[i][j+1]==7){
 		*kanan = true;
 	} else{
 		*kanan = false;
@@ -511,7 +525,7 @@ void menu_utama(){
 	menu_awal();
 	while(1){
 		getmouseclick(WM_LBUTTONDOWN, x, y);
-		if((x>200 && x<200+350)&&(y>210 && y<210+230)){
+		if((x>580 && x<580+151)&&(y>310 && y<310+70)){
 			cleardevice();
 			pilihan();
 			while(1){
@@ -526,11 +540,11 @@ void menu_utama(){
 					maping();
 					pacmanLocation();
 					if(lv==1){
-					timer_start();
+					timer_start();	
 					}
 					while(lv>=1){
-
-						returnPacman();
+					
+						returnPacman();	
 						pointt();
 						die();
 						movement(lv);
@@ -557,7 +571,7 @@ void menu_utama(){
 					timer_start();
 					}
 					while(lv>=2){
-						returnPacman();
+						returnPacman();	
 						pointt();
 						die();
 						movement(lv);
@@ -593,7 +607,7 @@ void menu_utama(){
 					timer_start();
 					}
 					while(lv>=3){
-						returnPacman();
+						returnPacman();	
 						pointt();
 						die();
 						movement(lv);
@@ -622,7 +636,7 @@ void menu_utama(){
 					timer_start();
 					}
 					while(lv==4){
-						returnPacman();
+						returnPacman();	
 						pointt();
 						die();
 						movement(lv);
@@ -637,7 +651,7 @@ void menu_utama(){
 			}	goto menu;
 			}
 		}
-			}else if((x>200 && x<200+350)&&(y>460 && y<460+230)){
+			}else if((x>557 && x<557+185)&&(y>400 && y<400+90)){
 			view_leaderboard();
 			leaderboard();
 			while(1){
@@ -646,7 +660,7 @@ void menu_utama(){
 					goto menu;
 				}
 			}
-		}else if((x>650 && x<650+350)&&(y>460 && y<460+230)){
+		}else if((x>40 && x<40+80)&&(y>600 && y<680)){
 			while(1){
 				how();
 				getmouseclick(WM_LBUTTONDOWN, x, y);
@@ -654,7 +668,7 @@ void menu_utama(){
 					goto menu;
 				}
 			}
-		}else if((x>650 && x<650+350)&&(y>210 && y<210+230)){
+		}else if((x>560 && x<560+185)&&(y>500 && y<500+90)){
 			about();
 			while(1){
 				getmouseclick(WM_LBUTTONDOWN, x, y);
@@ -662,7 +676,7 @@ void menu_utama(){
 					goto menu;
 				}
 			}
-		}else if((x>1150 && x<1150+80)&&(y>620 && y<620+80)){
+		}else if((x>580 && x<580+125)&&(y>600 && y<600+60)){
 			keluar();
 			while(1){
 				getmouseclick(WM_LBUTTONDOWN, x, y);
