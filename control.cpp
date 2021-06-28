@@ -184,6 +184,7 @@ void ceksprite(int sprite, int baris, int kolom){
 			naik(baris, kolom, 1);
 		}else{
 			run(baris,kolom,3);
+			
 		}
 	}
 	if(sprite==2){
